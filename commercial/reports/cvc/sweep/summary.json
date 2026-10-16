@@ -1,0 +1,88 @@
+{
+ "package": "commercial",
+ "scope": "CVC at 8.0 ns and 6.0 ns on the shipped commercial netlist and simulation SDF, same harness and models as the 8.25 ns run. Two points on one workload; they do not locate a general timing limit.",
+ "points": {
+  "8.0": {
+   "period_ns": 8.0,
+   "verdict": "PASS",
+   "detail": "RESULT 55, 0 timing violations",
+   "testbench_result": "55",
+   "testbench_verdict": "PASS",
+   "timing_violations": 0,
+   "violating_instances": 0,
+   "control_4ns": {
+    "verdict": "PASS",
+    "timing_violations": 76
+   },
+   "coverage": {
+    "sdf_errors": 0,
+    "traces_from_other_files": 0,
+    "traces_not_on_the_entry_instance": 0,
+    "iopath": {
+     "entries": 20796,
+     "applied": 20796,
+     "skipped_zero": 0,
+     "unapplied": 0
+    },
+    "interconnect": {
+     "entries": 22090,
+     "applied": 22090,
+     "skipped_zero": 0,
+     "unapplied": 0
+    },
+    "timingcheck": {
+     "entries": 6228,
+     "applied": 6228,
+     "skipped_zero": 0,
+     "unapplied": 0
+    },
+    "design_timing_checks": {
+     "checks": 9342,
+     "given_limits": 9342,
+     "without_limits": 0
+    }
+   }
+  },
+  "6.0": {
+   "period_ns": 6.0,
+   "verdict": "FAIL",
+   "detail": "RESULT timeout, VERDICT FAIL, 37 timing violations",
+   "testbench_result": "timeout",
+   "testbench_verdict": "FAIL",
+   "timing_violations": 37,
+   "violating_instances": 17,
+   "control_4ns": {
+    "verdict": "PASS",
+    "timing_violations": 76
+   },
+   "coverage": {
+    "sdf_errors": 0,
+    "traces_from_other_files": 0,
+    "traces_not_on_the_entry_instance": 0,
+    "iopath": {
+     "entries": 20796,
+     "applied": 20796,
+     "skipped_zero": 0,
+     "unapplied": 0
+    },
+    "interconnect": {
+     "entries": 22090,
+     "applied": 22090,
+     "skipped_zero": 0,
+     "unapplied": 0
+    },
+    "timingcheck": {
+     "entries": 6228,
+     "applied": 6228,
+     "skipped_zero": 0,
+     "unapplied": 0
+    },
+    "design_timing_checks": {
+     "checks": 9342,
+     "given_limits": 9342,
+     "without_limits": 0
+    }
+   }
+  }
+ }
+}

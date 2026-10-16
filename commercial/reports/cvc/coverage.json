@@ -1,0 +1,29 @@
+{
+ "coverage_definition": "IOPATH, INTERCONNECT and TIMINGCHECK entries of the simulation SDF, read back from CVC's +sdfverbose trace by cvc_report.py. skipped_zero counts INTERCONNECT entries whose values are all zero, which CVC skips on purpose; they are not counted as applied.",
+ "sdf_errors": 0,
+ "traces_from_other_files": 0,
+ "traces_not_on_the_entry_instance": 0,
+ "iopath": {
+  "entries": 20796,
+  "applied": 20796,
+  "skipped_zero": 0,
+  "unapplied": 0
+ },
+ "interconnect": {
+  "entries": 22090,
+  "applied": 22090,
+  "skipped_zero": 0,
+  "unapplied": 0
+ },
+ "timingcheck": {
+  "entries": 6228,
+  "applied": 6228,
+  "skipped_zero": 0,
+  "unapplied": 0
+ },
+ "design_timing_checks": {
+  "checks": 9342,
+  "given_limits": 9342,
+  "without_limits": 0
+ }
+}

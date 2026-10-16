@@ -1,0 +1,50 @@
+{
+ "package": "open",
+ "period_ns": 8.25,
+ "control_ns": 4.125,
+ "selftest": "PASS",
+ "sdf_coverage": "PASS",
+ "nominal": {
+  "verdict": "PASS",
+  "detail": "RESULT 55, 0 timing violations",
+  "testbench_result": "55",
+  "testbench_verdict": "PASS",
+  "timing_violations": 0
+ },
+ "control": {
+  "verdict": "FAIL",
+  "detail": "control did not fail with violations: VERDICT FAIL, 0 timing violations",
+  "testbench_result": "timeout",
+  "testbench_verdict": "FAIL",
+  "timing_violations": 0
+ },
+ "coverage": {
+  "sdf_errors": 0,
+  "traces_from_other_files": 0,
+  "traces_not_on_the_entry_instance": 0,
+  "iopath": {
+   "entries": 26463,
+   "applied": 26463,
+   "skipped_zero": 0,
+   "unapplied": 0
+  },
+  "interconnect": {
+   "entries": 26002,
+   "applied": 25989,
+   "skipped_zero": 13,
+   "unapplied": 0
+  },
+  "timingcheck": {
+   "entries": 6388,
+   "applied": 6388,
+   "skipped_zero": 0,
+   "unapplied": 0
+  },
+  "design_timing_checks": {
+   "checks": 9582,
+   "given_limits": 9582,
+   "without_limits": 0
+  }
+ },
+ "note": "CVC passes at 8.25 ns with 0 timing violations. The 4.125 ns control fails functionally (RESULT timeout) with 0 timing-check violations, so by the control criterion (a failure with at least one timing-check violation) the control is a FAIL; it shows delay sensitivity of the workload, not a live timing check."
+}

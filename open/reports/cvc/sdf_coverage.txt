@@ -1,0 +1,7 @@
+sdf_errors=0
+traces_from_other_files=0
+traces_not_on_the_entry_instance=0
+sdf_iopath_entries=26463 applied=26463 skipped_zero=0 unapplied=0
+sdf_interconnect_entries=26002 applied=25989 skipped_zero=13 unapplied=0
+sdf_timingcheck_entries=6388 applied=6388 skipped_zero=0 unapplied=0
+design_timing_checks=9582 given_limits=9582 without_limits=0

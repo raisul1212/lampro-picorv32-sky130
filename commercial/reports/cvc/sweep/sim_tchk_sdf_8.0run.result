@@ -1,0 +1,1 @@
+PASS sdf_iopath_entries=20796 applied=20796 skipped_zero=0 unapplied=0;sdf_interconnect_entries=22090 applied=22090 skipped_zero=0 unapplied=0;sdf_timingcheck_entries=6228 applied=6228 skipped_zero=0 unapplied=0;design_timing_checks=9342 given_limits=9342 without_limits=0;

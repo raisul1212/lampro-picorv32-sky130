@@ -1,0 +1,21 @@
+{
+ "tool": "OSS-CVC 7.00b (OSS_CVC_7.00b-x86_64-rhel6x), build sha256 f0fadb3b280c6372bae40c993c6425b76090ee435d472c4460ab294126f22073",
+ "tool_note": "The self-test (12 probes) passed on this build; it probes the keyword, sign and edge behaviour that cvc-local-fixes.patch changes.",
+ "scripts": {
+  "source": "Lampro AI campaign release, commit 54703d4ff1826089461f90a60b9798971d0d2494, examples/picorv32/verify/",
+  "sim_tchk_sh_sha256": "14947ae97f05f04d60af67fa275ed99c2ce9fc627e5e516f18fb5b9866917f8c",
+  "cvc_report_py_sha256": "03ab28442d39ac2ac34d39d51bc0c98d952969dbe9811dbe8338ab30e96aa4c7",
+  "note": "The copies in verify/ differ from these only in comments (references to review threads removed) and, for negtchk.py, one comment inside a generated-code string."
+ },
+ "run_kind": "newly executed on 2026-10-16 (started 14:27 EDT) on the shipped v2.0.1 netlist and simulation SDF; not a historical report",
+ "operating_conditions": "timing from the shipped SDF (Tempus-produced input for the commercial package, as already shipped; OpenSTA/OpenROAD-produced for the open package); no new Tempus output",
+ "sdf_note": "The simulation SDF (timing/picorv32.sim.sdf), not the full timing/picorv32.sdf, was used: its INTERCONNECT entries with a port endpoint are removed (commercial: 454 entries, both endpoints; open: 307 destination-port entries), so CVC did not time those entries. Coverage counts below are over the simulation SDF.",
+ "negative_control_note": "A control counts only if it fails with at least one timing-check violation in a completed run.",
+ "package": "commercial",
+ "inputs": {
+  "netlist/picorv32.sim.v": "a5760a859085ee48be4ef448dc3e416a925895cefce14320a9d8bf51ee3b4efd",
+  "timing/picorv32.sim.sdf": "5b713a9feb5feaacbf36d3cb47d35fced587b0b4520744b95dc665b4de8ae0f8",
+  "sim/tb_picorv32_golden.v": "4cfd5b5459d66a734d7bd28ce435d184f01afe453cb2ea98aafb41709dbf0146"
+ },
+ "commands": "WORK=<work> sim_tchk.sh <picorv32.sim.v> <picorv32.sim.sdf> <tb_picorv32_golden.v> <period>  for period 8.0 and 6.0 (control 4 ns, the script default)"
+}
