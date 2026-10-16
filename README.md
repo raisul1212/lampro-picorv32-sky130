@@ -104,12 +104,13 @@ The open build's implementation uses no commercial tool.
 | Antenna repair | Innovus NanoRoute with an antenna margin | OpenROAD antenna repair, then two diodes added with LibreLane's stock `Odb.InsertECODiodes` step |
 | Logic equivalence | Cadence Conformal 24.10 | Cadence Conformal 24.10 (same tool) |
 | Gate-level simulation with timing checks | Cadence Xcelium 24.03 | Cadence Xcelium 24.03 (same tool) |
-| Release verification (`verify/`) | Magic 8.3.623, KLayout 0.30.7, Netgen 1.5.316, OpenSTA 2.7.0, Icarus Verilog 13.0 | the same unmodified tools |
+| Release verification (`verify/`) | Magic 8.3.623, KLayout 0.30.7, Netgen 1.5.316, OpenSTA 2.7.0, Icarus Verilog 13.0 | the same unmodified tools; CVC (below) is built with a local patch |
 
 ## Modifications inside the open-source tools
 
 Implementation used OpenROAD with private modifications that are not published. Every check an
-outsider runs uses unmodified open-source tools. The modifications are in four places:
+outsider runs uses open-source tools, unmodified except OSS-CVC, which is built with the shipped
+`verify/cvc-local-fixes.patch`. The modifications are in four places:
 
 1. **OpenROAD Resizer (`rsz`): electrical repair and rebuffering.** After routing, repair uses the
    extracted parasitics, including zero-length shunt capacitances, in place of an estimate that had

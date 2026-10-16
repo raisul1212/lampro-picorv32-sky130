@@ -221,13 +221,13 @@ Static IR drop & Cadence Voltus & OpenROAD PSM with a private modification\\
 Antenna repair & Innovus NanoRoute with an antenna margin & OpenROAD antenna repair, then two diodes added with LibreLane's stock \sk{Odb.InsertECODiodes} step\\
 Logic equivalence & Cadence Conformal 24.10 & Cadence Conformal 24.10 (same tool)\\
 Gate-level simulation with timing checks & Cadence Xcelium 24.03 & Cadence Xcelium 24.03 (same tool)\\
-Release verification (\sk{verify/}) & Magic 8.3.623, KLayout 0.30.7, Netgen 1.5.316, OpenSTA 2.7.0, Icarus Verilog 13.0 & the same unmodified tools\\
+Release verification (\sk{verify/}) & Magic 8.3.623, KLayout 0.30.7, Netgen 1.5.316, OpenSTA 2.7.0, Icarus Verilog 13.0 & the same unmodified tools; CVC is built with a local patch\\
 \bottomrule
 \end{tabularx}
 \end{center}
 
 \subsection*{Modifications inside the open-source tools}
-Implementation used OpenROAD with private modifications that are not published. Every check an outsider runs uses unmodified open-source tools. The modifications are in four places.
+Implementation used OpenROAD with private modifications that are not published. Every check an outsider runs uses open-source tools, unmodified except OSS-CVC, which is built with the shipped \sk{verify/cvc-local-fixes.patch}. The modifications are in four places.
 \begin{enumerate}
 \item \textbf{OpenROAD Resizer (\sk{rsz}): electrical repair and rebuffering.} After routing, repair uses the extracted parasitics, including zero-length shunt capacitances, in place of an estimate that had under-counted wire load by 2.2 to 2.4 times on the nets of a parasitic probe (a development record that is not released here). Driver sizing uses the selected corner's model and the SDC slew limit, and fanout headroom accounts for antenna-diode loads.
 \item \textbf{OpenSTA inside OpenROAD: parasitics and SDC.} The SPEF reader and the parasitic store give the Resizer the extracted RC network in a form its buffering model can use, and constraint checks ignore empty exception entries.

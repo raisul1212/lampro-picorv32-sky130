@@ -454,6 +454,58 @@ class PerPackage:
         self.assertFailed(rc, out, "versions", f)
         f.env["PATH"] = env_path
 
+    def test_versions_netgen_failure(self):
+        f = self.fx()
+        rc, out = f.run("versions.sh", FAKE_NETGEN_VER_RC=7)     # netgen prints its banner, then exits 7
+        self.assertFailed(rc, out, "versions", f)
+
+    def _periods(self, f, body_for):
+        """Run sim_tchk_periods.sh with a stub cvcsim; body_for(period) is the stub's shell for that period."""
+        d = os.path.join(f.tmp, "design")
+        os.makedirs(d)
+        work = os.path.join(f.tmp, "pwork")
+        os.makedirs(work)
+        write_exec(os.path.join(d, "cvcsim"), "#!/usr/bin/env bash\ncase \"$1\" in\n" + "".join(
+            "  +period=%s) %s;;\n" % (p, body_for[p]) for p in body_for) + "esac\n")
+        p = subprocess.run(["bash", os.path.join(f.pkg, "verify", "sim_tchk_periods.sh"), work, d, "8.25", "4.125"],
+                           env=f.env, cwd=f.tmp, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, timeout=60)
+        res = {}
+        for k in ("sim_tchk_8.25ns", "sim_tchk_4.125ns_control"):
+            q = os.path.join(work, k + ".result")
+            res[k] = open(q).read() if os.path.exists(q) else None
+        return p.returncode, p.stdout, res
+
+    OK_P = "echo RESULT 55; echo VERDICT PASS"
+    OK_C = ("echo '[566] timing violation in tb.uut.x (diff. -5 ps)'; echo '  $setup(x)'; "
+            "echo RESULT trap; echo VERDICT FAIL")
+
+    def test_sim_tchk_periods(self):
+        f = self.fx()
+        rc, out, res = self._periods(f, {"8.25": self.OK_P, "4.125": self.OK_C})
+        self.assertEqual(rc, 0, out)
+        self.assertTrue(all(v and v.startswith("PASS") for v in res.values()), res)
+
+    def test_sim_tchk_periods_simulator_crash(self):
+        # the simulator printed a clean PASS and then died (exit 139): its output is not evidence
+        f = self.fx()
+        rc, out, res = self._periods(f, {"8.25": self.OK_P + "; exit 139", "4.125": self.OK_C})
+        self.assertNotEqual(rc, 0, out)
+        self.assertTrue(res["sim_tchk_8.25ns"].startswith("FAIL"), res)
+        f = self.fx()
+        rc, out, res = self._periods(f, {"8.25": self.OK_P, "4.125": self.OK_C + "; exit 139"})
+        self.assertNotEqual(rc, 0, out)
+        self.assertTrue(res["sim_tchk_4.125ns_control"].startswith("FAIL"), res)
+
+    def test_sim_tchk_periods_missing_result(self):
+        f = self.fx()
+        rc, out, res = self._periods(f, {"8.25": "echo nothing useful", "4.125": self.OK_C})
+        self.assertNotEqual(rc, 0, out)
+        self.assertTrue(res["sim_tchk_8.25ns"].startswith("FAIL"), res)
+        f = self.fx()
+        rc, out, res = self._periods(f, {"8.25": self.OK_P, "4.125": "echo '[566] timing violation in a (diff. 1 ps)'; echo RESULT x"})
+        self.assertNotEqual(rc, 0, out)
+        self.assertTrue(res["sim_tchk_4.125ns_control"].startswith("FAIL"), res)
+
     def test_transistors_python_failure(self):
         f = self.fx()
         f.seed(["transistors"])

@@ -12,7 +12,12 @@ ver() {
   if [ $rc != 0 ] || [ -z "$out" ]; then bad="$bad $label"; out="UNAVAILABLE (status $rc)"; fi
   printf '%-15s %s\n' "$label:" "$(printf '%s\n' "$out" | head -1)"
 }
-netgen_v() { netgen -batch quit 2>&1 | grep -a 'Netgen' | head -1 | grep -a .; }
+netgen_v() {
+  local out rc
+  out="$(netgen -batch quit 2>&1)"; rc=$?
+  [ $rc = 0 ] || { printf '%s\n' "$out" | head -1; return $rc; }
+  printf '%s\n' "$out" | grep -a 'Netgen' | head -1 | grep -a .
+}
 {
   ver Magic magic --version
   ver Netgen netgen_v
