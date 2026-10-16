@@ -1,0 +1,114 @@
+{
+ "definition": "Sum of liberty cell areas of all instances in the netlist, excluding tap, fill and decap cells; unrounded decimal sums, displayed to four decimals. Not die area or utilization.",
+ "netlists": {
+  "picorv32.synth.v": {
+   "sha256": "16f15316c663f8cb22d23821767a845e9db0f1cc5d8dc1f382c7b38fe66320ef",
+   "instances_included": 8456,
+   "instances_all": 8456,
+   "area_included_um2": "99055.0016",
+   "by_class_um2": {
+    "Flops": "33968.8288",
+    "Mux": "27273.6576",
+    "Complex gates": "20113.0400",
+    "Simple gates": "11146.9408",
+    "Buffers": "6154.6528",
+    "Tie": "397.8816"
+   },
+   "by_class_instances": {
+    "Flops": 1597,
+    "Mux": 1806,
+    "Complex gates": 1958,
+    "Simple gates": 1362,
+    "Buffers": 1627,
+    "Tie": 106
+   },
+   "excluded": {}
+  },
+  "picorv32.routed.v": {
+   "sha256": "59e39d5bc7574fdf63406ccc7865621d4dc04961c8fe2dc43c2f35738be74ba8",
+   "instances_included": 11295,
+   "instances_all": 45691,
+   "area_included_um2": "119009.1392",
+   "by_class_um2": {
+    "Flops": "33986.3456",
+    "Mux": "27281.1648",
+    "Complex gates": "20321.9904",
+    "Simple gates": "11342.1280",
+    "Buffers": "6921.6384",
+    "Clock tree": "5695.4624",
+    "Hold buffers": "11826.3424",
+    "Diodes": "1236.1856",
+    "Tie": "397.8816"
+   },
+   "by_class_instances": {
+    "Flops": 1597,
+    "Mux": 1806,
+    "Complex gates": 1958,
+    "Simple gates": 1362,
+    "Buffers": 1205,
+    "Clock tree": 404,
+    "Hold buffers": 2363,
+    "Diodes": 494,
+    "Tie": 106
+   },
+   "excluded": {
+    "Decap": {
+     "instances": 19498,
+     "area_um2": "73187.6928"
+    },
+    "Fill": {
+     "instances": 11766,
+     "area_um2": "23179.7312"
+    },
+    "Tap": {
+     "instances": 3132,
+     "area_um2": "3918.7584"
+    }
+   },
+   "area_including_taps_um2": "122927.8976"
+  },
+  "picorv32.routed.pg.v": {
+   "sha256": "9574bbf3e4081d380759d35e3fc8f48ff478831eae6db69e9da49f0cd9a47271",
+   "instances_included": 11295,
+   "instances_all": 45691,
+   "area_included_um2": "119009.1392",
+   "by_class_um2": {
+    "Flops": "33986.3456",
+    "Mux": "27281.1648",
+    "Complex gates": "20321.9904",
+    "Simple gates": "11342.1280",
+    "Buffers": "6921.6384",
+    "Clock tree": "5695.4624",
+    "Hold buffers": "11826.3424",
+    "Diodes": "1236.1856",
+    "Tie": "397.8816"
+   },
+   "by_class_instances": {
+    "Flops": 1597,
+    "Mux": 1806,
+    "Complex gates": 1958,
+    "Simple gates": 1362,
+    "Buffers": 1205,
+    "Clock tree": 404,
+    "Hold buffers": 2363,
+    "Diodes": 494,
+    "Tie": 106
+   },
+   "excluded": {
+    "Decap": {
+     "instances": 19498,
+     "area_um2": "73187.6928"
+    },
+    "Fill": {
+     "instances": 11766,
+     "area_um2": "23179.7312"
+    },
+    "Tap": {
+     "instances": 3132,
+     "area_um2": "3918.7584"
+    }
+   },
+   "area_including_taps_um2": "122927.8976"
+  }
+ }
+}

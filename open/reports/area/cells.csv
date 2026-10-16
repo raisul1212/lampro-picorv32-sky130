@@ -1,0 +1,354 @@
+netlist,cell_master,class,population,unit_area_um2,contribution_um2,inclusion,area_source
+picorv32.synth.v,sky130_fd_sc_hd__a2111o_2,Complex gates,5,12.5120,62.5600,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__a2111oi_2,Complex gates,2,15.0144,30.0288,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__a211o_2,Complex gates,136,10.0096,1361.3056,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__a211oi_2,Complex gates,17,12.5120,212.7040,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__a21bo_2,Complex gates,14,10.0096,140.1344,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__a21boi_2,Complex gates,13,11.2608,146.3904,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__a21o_2,Complex gates,125,8.7584,1094.8000,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__a21oi_2,Complex gates,146,8.7584,1278.7264,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__a221o_2,Complex gates,55,11.2608,619.3440,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__a221oi_2,Complex gates,9,15.0144,135.1296,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__a22o_2,Complex gates,154,10.0096,1541.4784,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__a22oi_2,Complex gates,15,12.5120,187.6800,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__a2bb2o_2,Complex gates,34,11.2608,382.8672,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__a2bb2o_4,Complex gates,1,20.0192,20.0192,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__a2bb2oi_2,Complex gates,3,15.0144,45.0432,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__a311o_2,Complex gates,25,11.2608,281.5200,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__a311oi_2,Complex gates,7,15.0144,105.1008,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__a31o_2,Complex gates,214,8.7584,1874.2976,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__a31oi_2,Complex gates,25,12.5120,312.8000,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__a32o_2,Complex gates,76,11.2608,855.8208,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__a32oi_2,Complex gates,5,16.2656,81.3280,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__a41o_2,Complex gates,33,11.2608,371.6064,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__a41oi_2,Complex gates,5,16.2656,81.3280,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__and2_2,Simple gates,88,7.5072,660.6336,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__and2b_2,Simple gates,43,8.7584,376.6112,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__and3_2,Simple gates,132,7.5072,990.9504,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__and3b_2,Simple gates,50,10.0096,500.4800,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__and4_2,Simple gates,63,10.0096,630.6048,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__and4b_2,Simple gates,15,11.2608,168.9120,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__and4bb_2,Simple gates,10,12.5120,125.1200,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__buf_1,Buffers,1603,3.7536,6017.0208,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__buf_2,Buffers,20,5.0048,100.0960,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__buf_4,Buffers,2,7.5072,15.0144,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__buf_6,Buffers,2,11.2608,22.5216,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__conb_1,Tie,106,3.7536,397.8816,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__dfxtp_2,Flops,1597,21.2704,33968.8288,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__inv_2,Simple gates,96,3.7536,360.3456,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__mux2_1,Mux,1188,11.2608,13377.8304,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__mux2_2,Mux,2,11.2608,22.5216,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__mux4_2,Mux,616,22.5216,13873.3056,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__nand2_2,Simple gates,194,6.2560,1213.6640,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__nand2_4,Simple gates,1,11.2608,11.2608,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__nand2b_2,Simple gates,4,8.7584,35.0336,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__nand3_2,Simple gates,32,10.0096,320.3072,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__nand3b_2,Simple gates,3,11.2608,33.7824,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__nand4_2,Simple gates,44,12.5120,550.5280,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__nand4_4,Simple gates,1,21.2704,21.2704,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__nand4b_2,Simple gates,2,15.0144,30.0288,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__nor2_2,Simple gates,199,6.2560,1244.9440,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__nor2_4,Simple gates,1,11.2608,11.2608,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__nor2b_2,Simple gates,5,8.7584,43.7920,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__nor3_2,Simple gates,30,10.0096,300.2880,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__nor3_4,Simple gates,4,16.2656,65.0624,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__nor3b_2,Simple gates,4,12.5120,50.0480,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__nor3b_4,Simple gates,1,18.7680,18.7680,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__nor4_2,Simple gates,16,12.5120,200.1920,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__nor4_4,Simple gates,2,21.2704,42.5408,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__nor4b_2,Simple gates,1,15.0144,15.0144,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__nor4b_4,Simple gates,2,23.7728,47.5456,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__o2111a_2,Complex gates,4,12.5120,50.0480,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__o2111ai_2,Complex gates,11,15.0144,165.1584,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__o211a_2,Complex gates,187,10.0096,1871.7952,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__o211ai_2,Complex gates,44,12.5120,550.5280,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__o21a_2,Complex gates,88,8.7584,770.7392,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__o21ai_2,Complex gates,125,8.7584,1094.8000,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__o21ba_2,Complex gates,18,10.0096,180.1728,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__o21bai_2,Complex gates,19,11.2608,213.9552,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__o221a_2,Complex gates,18,11.2608,202.6944,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__o221ai_2,Complex gates,16,15.0144,240.2304,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__o22a_2,Complex gates,66,10.0096,660.6336,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__o22ai_2,Complex gates,10,12.5120,125.1200,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__o2bb2a_2,Complex gates,49,11.2608,551.7792,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__o2bb2ai_2,Complex gates,13,15.0144,195.1872,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__o311a_2,Complex gates,26,11.2608,292.7808,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__o311ai_2,Complex gates,9,16.2656,146.3904,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__o31a_2,Complex gates,30,10.0096,300.2880,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__o31ai_2,Complex gates,36,12.5120,450.4320,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__o31ai_4,Complex gates,1,21.2704,21.2704,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__o32a_2,Complex gates,57,11.2608,641.8656,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__o32ai_2,Complex gates,4,16.2656,65.0624,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__o41a_2,Complex gates,8,12.5120,100.0960,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__or2_2,Simple gates,75,6.2560,469.2000,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__or2b_2,Simple gates,31,8.7584,271.5104,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__or3_2,Simple gates,53,7.5072,397.8816,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__or3b_2,Simple gates,22,8.7584,192.6848,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__or4_2,Simple gates,42,8.7584,367.8528,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__or4_4,Simple gates,1,11.2608,11.2608,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__or4b_2,Simple gates,26,10.0096,260.2496,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__or4bb_2,Simple gates,4,12.5120,50.0480,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__xnor2_2,Simple gates,26,16.2656,422.9056,included,liberty
+picorv32.synth.v,sky130_fd_sc_hd__xor2_2,Simple gates,39,16.2656,634.3584,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__a2111o_2,Complex gates,5,12.5120,62.5600,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__a2111oi_2,Complex gates,2,15.0144,30.0288,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__a211o_2,Complex gates,136,10.0096,1361.3056,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__a211oi_2,Complex gates,16,12.5120,200.1920,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__a211oi_4,Complex gates,1,20.0192,20.0192,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__a21bo_2,Complex gates,14,10.0096,140.1344,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__a21boi_2,Complex gates,12,11.2608,135.1296,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__a21boi_4,Complex gates,1,18.7680,18.7680,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__a21o_2,Complex gates,124,8.7584,1086.0416,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__a21o_4,Complex gates,1,15.0144,15.0144,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__a21oi_2,Complex gates,144,8.7584,1261.2096,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__a21oi_4,Complex gates,2,16.2656,32.5312,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__a221o_2,Complex gates,55,11.2608,619.3440,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__a221oi_2,Complex gates,9,15.0144,135.1296,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__a22o_2,Complex gates,153,10.0096,1531.4688,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__a22o_4,Complex gates,1,17.5168,17.5168,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__a22oi_2,Complex gates,15,12.5120,187.6800,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__a2bb2o_2,Complex gates,34,11.2608,382.8672,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__a2bb2o_4,Complex gates,1,20.0192,20.0192,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__a2bb2oi_2,Complex gates,3,15.0144,45.0432,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__a311o_2,Complex gates,25,11.2608,281.5200,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__a311oi_2,Complex gates,7,15.0144,105.1008,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__a31o_2,Complex gates,214,8.7584,1874.2976,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__a31oi_2,Complex gates,24,12.5120,300.2880,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__a31oi_4,Complex gates,1,21.2704,21.2704,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__a32o_2,Complex gates,76,11.2608,855.8208,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__a32oi_2,Complex gates,5,16.2656,81.3280,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__a41o_2,Complex gates,33,11.2608,371.6064,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__a41oi_2,Complex gates,5,16.2656,81.3280,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__and2_2,Simple gates,88,7.5072,660.6336,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__and2b_2,Simple gates,43,8.7584,376.6112,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__and3_2,Simple gates,131,7.5072,983.4432,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__and3_4,Simple gates,1,11.2608,11.2608,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__and3b_2,Simple gates,50,10.0096,500.4800,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__and4_2,Simple gates,61,10.0096,610.5856,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__and4_4,Simple gates,2,11.2608,22.5216,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__and4b_2,Simple gates,15,11.2608,168.9120,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__and4bb_2,Simple gates,10,12.5120,125.1200,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__buf_12,Buffers,8,20.0192,160.1536,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__buf_2,Buffers,1040,5.0048,5204.9920,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__buf_4,Buffers,32,7.5072,240.2304,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__buf_6,Buffers,76,11.2608,855.8208,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__buf_8,Buffers,10,15.0144,150.1440,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__bufinv_16,Clock tree,19,30.0288,570.5472,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__clkbuf_16,Buffers,1,25.0240,25.0240,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__clkbuf_16,Clock tree,33,25.0240,825.7920,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__clkbuf_2,Hold buffers,2363,5.0048,11826.3424,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__clkbuf_4,Buffers,38,7.5072,285.2736,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__clkbuf_4,Clock tree,23,7.5072,172.6656,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__clkbuf_8,Clock tree,269,13.7632,3702.3008,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__clkinv_2,Clock tree,21,5.0048,105.1008,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__clkinv_4,Clock tree,7,8.7584,61.3088,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__clkinvlp_4,Clock tree,18,7.5072,135.1296,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__conb_1,Tie,106,3.7536,397.8816,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__decap_3,Decap,19498,3.7536,73187.6928,excluded (tap/fill/decap),liberty
+picorv32.routed.v,sky130_fd_sc_hd__dfxtp_2,Flops,1590,21.2704,33819.9360,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__dfxtp_4,Flops,7,23.7728,166.4096,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__diode_2,Diodes,494,2.5024,1236.1856,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__fill_1,Fill,5006,1.2512,6263.5072,excluded (tap/fill/decap),LEF SIZE
+picorv32.routed.v,sky130_fd_sc_hd__fill_2,Fill,6760,2.5024,16916.2240,excluded (tap/fill/decap),LEF SIZE
+picorv32.routed.v,sky130_fd_sc_hd__inv_2,Simple gates,95,3.7536,356.5920,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__inv_6,Clock tree,14,8.7584,122.6176,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__inv_6,Simple gates,1,8.7584,8.7584,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__mux2_1,Mux,1182,11.2608,13310.2656,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__mux2_2,Mux,6,11.2608,67.5648,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__mux2_4,Mux,2,15.0144,30.0288,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__mux4_2,Mux,616,22.5216,13873.3056,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__nand2_2,Simple gates,194,6.2560,1213.6640,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__nand2_8,Simple gates,1,20.0192,20.0192,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__nand2b_2,Simple gates,4,8.7584,35.0336,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__nand3_2,Simple gates,32,10.0096,320.3072,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__nand3b_2,Simple gates,3,11.2608,33.7824,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__nand4_2,Simple gates,38,12.5120,475.4560,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__nand4_4,Simple gates,7,21.2704,148.8928,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__nand4b_2,Simple gates,2,15.0144,30.0288,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__nor2_2,Simple gates,195,6.2560,1219.9200,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__nor2_4,Simple gates,5,11.2608,56.3040,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__nor2b_2,Simple gates,5,8.7584,43.7920,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__nor3_2,Simple gates,28,10.0096,280.2688,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__nor3_4,Simple gates,6,16.2656,97.5936,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__nor3b_2,Simple gates,2,12.5120,25.0240,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__nor3b_4,Simple gates,3,18.7680,56.3040,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__nor4_2,Simple gates,14,12.5120,175.1680,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__nor4_4,Simple gates,4,21.2704,85.0816,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__nor4b_2,Simple gates,1,15.0144,15.0144,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__nor4b_4,Simple gates,2,23.7728,47.5456,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__o2111a_2,Complex gates,4,12.5120,50.0480,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__o2111ai_2,Complex gates,10,15.0144,150.1440,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__o2111ai_4,Complex gates,1,26.2752,26.2752,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__o211a_2,Complex gates,186,10.0096,1861.7856,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__o211a_4,Complex gates,1,17.5168,17.5168,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__o211ai_2,Complex gates,42,12.5120,525.5040,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__o211ai_4,Complex gates,2,21.2704,42.5408,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__o21a_2,Complex gates,88,8.7584,770.7392,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__o21ai_2,Complex gates,123,8.7584,1077.2832,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__o21ai_4,Complex gates,2,16.2656,32.5312,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__o21ba_2,Complex gates,18,10.0096,180.1728,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__o21bai_2,Complex gates,16,11.2608,180.1728,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__o21bai_4,Complex gates,3,18.7680,56.3040,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__o221a_2,Complex gates,18,11.2608,202.6944,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__o221ai_2,Complex gates,15,15.0144,225.2160,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__o221ai_4,Complex gates,1,26.2752,26.2752,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__o22a_2,Complex gates,66,10.0096,660.6336,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__o22ai_2,Complex gates,10,12.5120,125.1200,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__o2bb2a_2,Complex gates,49,11.2608,551.7792,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__o2bb2ai_2,Complex gates,13,15.0144,195.1872,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__o311a_2,Complex gates,26,11.2608,292.7808,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__o311ai_2,Complex gates,8,16.2656,130.1248,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__o311ai_4,Complex gates,1,26.2752,26.2752,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__o31a_2,Complex gates,30,10.0096,300.2880,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__o31ai_2,Complex gates,29,12.5120,362.8480,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__o31ai_4,Complex gates,8,21.2704,170.1632,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__o32a_2,Complex gates,57,11.2608,641.8656,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__o32ai_2,Complex gates,4,16.2656,65.0624,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__o41a_2,Complex gates,8,12.5120,100.0960,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__or2_2,Simple gates,74,6.2560,462.9440,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__or2_4,Simple gates,1,8.7584,8.7584,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__or2b_2,Simple gates,31,8.7584,271.5104,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__or3_2,Simple gates,50,7.5072,375.3600,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__or3_4,Simple gates,3,11.2608,33.7824,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__or3b_2,Simple gates,18,8.7584,157.6512,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__or3b_4,Simple gates,4,11.2608,45.0432,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__or4_2,Simple gates,36,8.7584,315.3024,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__or4_4,Simple gates,7,11.2608,78.8256,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__or4b_2,Simple gates,21,10.0096,210.2016,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__or4b_4,Simple gates,5,13.7632,68.8160,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__or4bb_2,Simple gates,3,12.5120,37.5360,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__or4bb_4,Simple gates,1,15.0144,15.0144,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__tapvpwrvgnd_1,Tap,3132,1.2512,3918.7584,excluded (tap/fill/decap),LEF SIZE
+picorv32.routed.v,sky130_fd_sc_hd__xnor2_2,Simple gates,26,16.2656,422.9056,included,liberty
+picorv32.routed.v,sky130_fd_sc_hd__xor2_2,Simple gates,39,16.2656,634.3584,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__a2111o_2,Complex gates,5,12.5120,62.5600,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__a2111oi_2,Complex gates,2,15.0144,30.0288,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__a211o_2,Complex gates,136,10.0096,1361.3056,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__a211oi_2,Complex gates,16,12.5120,200.1920,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__a211oi_4,Complex gates,1,20.0192,20.0192,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__a21bo_2,Complex gates,14,10.0096,140.1344,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__a21boi_2,Complex gates,12,11.2608,135.1296,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__a21boi_4,Complex gates,1,18.7680,18.7680,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__a21o_2,Complex gates,124,8.7584,1086.0416,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__a21o_4,Complex gates,1,15.0144,15.0144,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__a21oi_2,Complex gates,144,8.7584,1261.2096,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__a21oi_4,Complex gates,2,16.2656,32.5312,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__a221o_2,Complex gates,55,11.2608,619.3440,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__a221oi_2,Complex gates,9,15.0144,135.1296,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__a22o_2,Complex gates,153,10.0096,1531.4688,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__a22o_4,Complex gates,1,17.5168,17.5168,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__a22oi_2,Complex gates,15,12.5120,187.6800,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__a2bb2o_2,Complex gates,34,11.2608,382.8672,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__a2bb2o_4,Complex gates,1,20.0192,20.0192,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__a2bb2oi_2,Complex gates,3,15.0144,45.0432,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__a311o_2,Complex gates,25,11.2608,281.5200,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__a311oi_2,Complex gates,7,15.0144,105.1008,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__a31o_2,Complex gates,214,8.7584,1874.2976,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__a31oi_2,Complex gates,24,12.5120,300.2880,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__a31oi_4,Complex gates,1,21.2704,21.2704,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__a32o_2,Complex gates,76,11.2608,855.8208,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__a32oi_2,Complex gates,5,16.2656,81.3280,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__a41o_2,Complex gates,33,11.2608,371.6064,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__a41oi_2,Complex gates,5,16.2656,81.3280,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__and2_2,Simple gates,88,7.5072,660.6336,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__and2b_2,Simple gates,43,8.7584,376.6112,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__and3_2,Simple gates,131,7.5072,983.4432,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__and3_4,Simple gates,1,11.2608,11.2608,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__and3b_2,Simple gates,50,10.0096,500.4800,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__and4_2,Simple gates,61,10.0096,610.5856,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__and4_4,Simple gates,2,11.2608,22.5216,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__and4b_2,Simple gates,15,11.2608,168.9120,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__and4bb_2,Simple gates,10,12.5120,125.1200,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__buf_12,Buffers,8,20.0192,160.1536,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__buf_2,Buffers,1040,5.0048,5204.9920,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__buf_4,Buffers,32,7.5072,240.2304,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__buf_6,Buffers,76,11.2608,855.8208,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__buf_8,Buffers,10,15.0144,150.1440,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__bufinv_16,Clock tree,19,30.0288,570.5472,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__clkbuf_16,Buffers,1,25.0240,25.0240,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__clkbuf_16,Clock tree,33,25.0240,825.7920,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__clkbuf_2,Hold buffers,2363,5.0048,11826.3424,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__clkbuf_4,Buffers,38,7.5072,285.2736,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__clkbuf_4,Clock tree,23,7.5072,172.6656,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__clkbuf_8,Clock tree,269,13.7632,3702.3008,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__clkinv_2,Clock tree,21,5.0048,105.1008,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__clkinv_4,Clock tree,7,8.7584,61.3088,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__clkinvlp_4,Clock tree,18,7.5072,135.1296,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__conb_1,Tie,106,3.7536,397.8816,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__decap_3,Decap,19498,3.7536,73187.6928,excluded (tap/fill/decap),liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__dfxtp_2,Flops,1590,21.2704,33819.9360,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__dfxtp_4,Flops,7,23.7728,166.4096,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__diode_2,Diodes,494,2.5024,1236.1856,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__fill_1,Fill,5006,1.2512,6263.5072,excluded (tap/fill/decap),LEF SIZE
+picorv32.routed.pg.v,sky130_fd_sc_hd__fill_2,Fill,6760,2.5024,16916.2240,excluded (tap/fill/decap),LEF SIZE
+picorv32.routed.pg.v,sky130_fd_sc_hd__inv_2,Simple gates,95,3.7536,356.5920,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__inv_6,Clock tree,14,8.7584,122.6176,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__inv_6,Simple gates,1,8.7584,8.7584,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__mux2_1,Mux,1182,11.2608,13310.2656,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__mux2_2,Mux,6,11.2608,67.5648,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__mux2_4,Mux,2,15.0144,30.0288,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__mux4_2,Mux,616,22.5216,13873.3056,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__nand2_2,Simple gates,194,6.2560,1213.6640,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__nand2_8,Simple gates,1,20.0192,20.0192,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__nand2b_2,Simple gates,4,8.7584,35.0336,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__nand3_2,Simple gates,32,10.0096,320.3072,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__nand3b_2,Simple gates,3,11.2608,33.7824,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__nand4_2,Simple gates,38,12.5120,475.4560,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__nand4_4,Simple gates,7,21.2704,148.8928,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__nand4b_2,Simple gates,2,15.0144,30.0288,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__nor2_2,Simple gates,195,6.2560,1219.9200,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__nor2_4,Simple gates,5,11.2608,56.3040,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__nor2b_2,Simple gates,5,8.7584,43.7920,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__nor3_2,Simple gates,28,10.0096,280.2688,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__nor3_4,Simple gates,6,16.2656,97.5936,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__nor3b_2,Simple gates,2,12.5120,25.0240,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__nor3b_4,Simple gates,3,18.7680,56.3040,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__nor4_2,Simple gates,14,12.5120,175.1680,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__nor4_4,Simple gates,4,21.2704,85.0816,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__nor4b_2,Simple gates,1,15.0144,15.0144,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__nor4b_4,Simple gates,2,23.7728,47.5456,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__o2111a_2,Complex gates,4,12.5120,50.0480,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__o2111ai_2,Complex gates,10,15.0144,150.1440,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__o2111ai_4,Complex gates,1,26.2752,26.2752,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__o211a_2,Complex gates,186,10.0096,1861.7856,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__o211a_4,Complex gates,1,17.5168,17.5168,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__o211ai_2,Complex gates,42,12.5120,525.5040,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__o211ai_4,Complex gates,2,21.2704,42.5408,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__o21a_2,Complex gates,88,8.7584,770.7392,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__o21ai_2,Complex gates,123,8.7584,1077.2832,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__o21ai_4,Complex gates,2,16.2656,32.5312,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__o21ba_2,Complex gates,18,10.0096,180.1728,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__o21bai_2,Complex gates,16,11.2608,180.1728,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__o21bai_4,Complex gates,3,18.7680,56.3040,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__o221a_2,Complex gates,18,11.2608,202.6944,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__o221ai_2,Complex gates,15,15.0144,225.2160,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__o221ai_4,Complex gates,1,26.2752,26.2752,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__o22a_2,Complex gates,66,10.0096,660.6336,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__o22ai_2,Complex gates,10,12.5120,125.1200,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__o2bb2a_2,Complex gates,49,11.2608,551.7792,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__o2bb2ai_2,Complex gates,13,15.0144,195.1872,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__o311a_2,Complex gates,26,11.2608,292.7808,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__o311ai_2,Complex gates,8,16.2656,130.1248,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__o311ai_4,Complex gates,1,26.2752,26.2752,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__o31a_2,Complex gates,30,10.0096,300.2880,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__o31ai_2,Complex gates,29,12.5120,362.8480,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__o31ai_4,Complex gates,8,21.2704,170.1632,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__o32a_2,Complex gates,57,11.2608,641.8656,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__o32ai_2,Complex gates,4,16.2656,65.0624,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__o41a_2,Complex gates,8,12.5120,100.0960,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__or2_2,Simple gates,74,6.2560,462.9440,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__or2_4,Simple gates,1,8.7584,8.7584,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__or2b_2,Simple gates,31,8.7584,271.5104,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__or3_2,Simple gates,50,7.5072,375.3600,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__or3_4,Simple gates,3,11.2608,33.7824,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__or3b_2,Simple gates,18,8.7584,157.6512,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__or3b_4,Simple gates,4,11.2608,45.0432,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__or4_2,Simple gates,36,8.7584,315.3024,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__or4_4,Simple gates,7,11.2608,78.8256,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__or4b_2,Simple gates,21,10.0096,210.2016,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__or4b_4,Simple gates,5,13.7632,68.8160,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__or4bb_2,Simple gates,3,12.5120,37.5360,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__or4bb_4,Simple gates,1,15.0144,15.0144,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__tapvpwrvgnd_1,Tap,3132,1.2512,3918.7584,excluded (tap/fill/decap),LEF SIZE
+picorv32.routed.pg.v,sky130_fd_sc_hd__xnor2_2,Simple gates,26,16.2656,422.9056,included,liberty
+picorv32.routed.pg.v,sky130_fd_sc_hd__xor2_2,Simple gates,39,16.2656,634.3584,included,liberty

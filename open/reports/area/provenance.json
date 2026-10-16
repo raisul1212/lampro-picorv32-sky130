@@ -1,0 +1,11 @@
+{
+ "command": "python3 verify/area_split.py --liberty <tt liberty> [--lef <LEF>]",
+ "liberty_sha256": "92eb4e93a3d4c2563018ac81cdec2f02fdeaced9b39337ed5c141fa63e0ad8f8",
+ "liberty_name": "sky130_fd_sc_hd__tt_025C_1v80.lib",
+ "lef_sha256": "cf8bcac8e831cff18c22a80999af3a97c8247028cd7dbbcdd8e3b73f725069ec",
+ "script": "verify/area_split.py adapted from the Lampro AI campaign release tools/area_split.py, commit 818d913e586ad6e11418ba5b776a564db61887de",
+ "run_kind": "newly executed on 2026-10-16 on the netlists shipped in this package; not a historical report",
+ "liberty_note": "The liberty and LEF used for this run were the SKY130 HD tt_025C_1v80 liberty and cell LEF in an OpenROAD test directory on the release machine (hashes above), not the PDK install. An earlier run of the same script on the PDK install used for the open-flow reproduction (tt liberty sha256 8e78e14442062dba34d414fca6490b2f6b96038d4510d1438ca44fee31487135, cell LEF sha256 3a3ea4e9d0973402702764d897659e52fe3d413eb48c306cd811de40a75264fa) gave identical per-netlist totals.",
+ "rounding": "Unrounded decimal sums; displayed to four decimals; figures in the README are rounded to the nearest um2.",
+ "tap_area": "Tap area is the tap count times the LEF SIZE of sky130_fd_sc_hd__tapvpwrvgnd_1 (0.460 x 2.720 um = 1.2512 um2); cells.csv gives the area source of every row."
+}

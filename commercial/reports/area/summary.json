@@ -1,0 +1,80 @@
+{
+ "definition": "Sum of liberty cell areas of all instances in the netlist, excluding tap, fill and decap cells; unrounded decimal sums, displayed to four decimals. Not die area or utilization.",
+ "netlists": {
+  "picorv32.synth.v": {
+   "sha256": "abc59a45b58650177d0ae19f0b88a3a17f297ac7ea478f6b4fdc5a605dc5dc97",
+   "instances_included": 7845,
+   "instances_all": 7845,
+   "area_included_um2": "71908.9664",
+   "by_class_um2": {
+    "Flops": "31312.5312",
+    "Mux": "41.2896",
+    "Complex gates": "25595.7984",
+    "Simple gates": "14666.5664",
+    "Buffers": "292.7808"
+   },
+   "by_class_instances": {
+    "Flops": 1557,
+    "Mux": 4,
+    "Complex gates": 3114,
+    "Simple gates": 3094,
+    "Buffers": 76
+   },
+   "excluded": {}
+  },
+  "picorv32.routed.v": {
+   "sha256": "6aa9f1ce832f705897b244b1447a2665f4a00e5f108d77795c1881be36d9d34d",
+   "instances_included": 8273,
+   "instances_all": 8273,
+   "area_included_um2": "75681.3344",
+   "by_class_um2": {
+    "Flops": "31348.8160",
+    "Mux": "41.2896",
+    "Complex gates": "25623.3248",
+    "Simple gates": "13789.4752",
+    "Buffers": "2935.3152",
+    "Clock tree": "1542.7296",
+    "Diodes": "2.5024",
+    "Tie": "397.8816"
+   },
+   "by_class_instances": {
+    "Flops": 1557,
+    "Mux": 4,
+    "Complex gates": 3098,
+    "Simple gates": 2621,
+    "Buffers": 710,
+    "Clock tree": 176,
+    "Diodes": 1,
+    "Tie": 106
+   },
+   "excluded": {}
+  },
+  "picorv32.routed.pg.v": {
+   "sha256": "2517e3f6fb695e860fd06090d65006646d7e2695e1df22e9d1e96d50a9ef8346",
+   "instances_included": 8273,
+   "instances_all": 8273,
+   "area_included_um2": "75681.3344",
+   "by_class_um2": {
+    "Flops": "31348.8160",
+    "Mux": "41.2896",
+    "Complex gates": "25623.3248",
+    "Simple gates": "13789.4752",
+    "Buffers": "2935.3152",
+    "Clock tree": "1542.7296",
+    "Diodes": "2.5024",
+    "Tie": "397.8816"
+   },
+   "by_class_instances": {
+    "Flops": 1557,
+    "Mux": 4,
+    "Complex gates": 3098,
+    "Simple gates": 2621,
+    "Buffers": 710,
+    "Clock tree": 176,
+    "Diodes": 1,
+    "Tie": 106
+   },
+   "excluded": {}
+  }
+ }
+}
