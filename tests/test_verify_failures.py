@@ -467,7 +467,7 @@ class PerPackage:
     PASSBODY = ('echo "PASS 12 probes" > "$R/sim_tchk_selftest.result"\n'
                 'echo "PASS sdf_iopath_entries=1" > "$R/sim_tchk_sdf.result"\n'
                 'echo "PASS RESULT 55, 0 timing violations" > "$R/sim_tchk_8.25ns.result"\n'
-                'echo "PASS control fails as expected: RESULT trap, 3 timing violations" > "$R/sim_tchk_4ns_control.result"\n')
+                'echo "PASS control fails as expected: RESULT trap, 3 timing violations" > "$R/sim_tchk_4.125ns_control.result"\n')
 
     def test_cvc_wrapper(self):
         cases = [
@@ -477,7 +477,7 @@ class PerPackage:
             ("pass_then_crash", self.PASSBODY + "exit 139\n", {}, False),
             ("no_selftest", self.PASSBODY.replace("sim_tchk_selftest", "x") + "exit 0\n", {}, False),
             ("selftest_refused", self.PASSBODY.replace('"PASS 12 probes"', '"REFUSED nope"') + "exit 2\n", {}, False),
-            ("no_control_verdict", self.PASSBODY.replace("sim_tchk_4ns_control", "x") + "exit 0\n", {}, False),
+            ("no_control_verdict", self.PASSBODY.replace("sim_tchk_4.125ns_control", "x") + "exit 0\n", {}, False),
             ("control_not_failing", self.PASSBODY.replace('"PASS control', '"FAIL control') + "exit 1\n", {}, False),
         ]
         for name, body, env, ok in cases:
