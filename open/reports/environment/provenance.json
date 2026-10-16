@@ -1,0 +1,8 @@
+{
+ "run_kind": "newly executed on 2026-10-16; a readback of two PDK installs, not a historical record",
+ "install_A": "open_pdks install at commit 8afc8346a57fe1ab7934ba5a6056ea8b43078e71 (the install path of the liberty used in the 2026-10-16 area run)",
+ "install_B": "the PDK_ROOT used for the 2026-10-16 CVC runs; this README pins it as open_pdks 97d08448b2f813d15d71d3cc183014e9ac7a4f3f. The install's own commit was not re-read in this readback.",
+ "method": "sha256 of each file in each install",
+ "result": "Cell LEF, ss liberty, tt liberty and primitives.v are byte-identical. The ff liberty (sky130_fd_sc_hd__ff_n40C_1v95.lib) and the cell Verilog model (sky130_fd_sc_hd.v) differ.",
+ "not_established": "That the open build was implemented with LibreLane 3.0.14, OpenSTA base 857316ff or open_pdks 8afc8346 is reported from private runs and is not established by any released environment record. This readback does not establish how the original design was implemented."
+}
