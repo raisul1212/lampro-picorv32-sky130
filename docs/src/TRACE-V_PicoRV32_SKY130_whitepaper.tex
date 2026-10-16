@@ -27,7 +27,7 @@
 \setlength{\emergencystretch}{2em}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{TRACE-V v2.0}
+\fancyhead[L]{TRACE-V v2.0.2}
 \fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 
@@ -41,28 +41,30 @@
 \begin{center}
 {\LARGE\bfseries TRACE-V: a PicoRV32 RISC-V core on SKY130, built by agentic AI and verified with independent open-source tools\par}
 \vspace{0.8em}
-{Raisul Islam \textperiodcentered{} October 2026 \textperiodcentered{} Release v2.0\par}
+{Raisul Islam \textperiodcentered{} October 2026 \textperiodcentered{} Release v2.0.2\par}
 \end{center}
 
 \textit{TRACE-V: Traceable RISC-V --- AI-built, Checked, Evidenced.} The release is published at \url{https://github.com/raisul1212/trace-v} for non-commercial academic instruction and research.
 
-Release v2.0 contains two implementations of the same design. The same RTL and the same constraint file were implemented by a commercial flow (Cadence Genus and Innovus) and by an open flow (Yosys and OpenROAD in LibreLane), and both builds are verified with the same open-source scripts. The commercial build is release v1.0.1, unchanged. Release v1.0.1 replaced the 8 ns route of v1.0 with an 8.25 ns route, which has a wider setup margin at the slow corner; the 8 ns release remains available at tag v1.0.
+TRACE-V is a worked example of block-level implementation and verification. Reported signoff is limited to the stated checks, constraints and conditions. It is not fab-ready.
+
+Release v2.0.2 contains two implementations of the same design, introduced in v2.0. The same RTL and the same constraint file were implemented by a commercial flow (Cadence Genus and Innovus) and by an open flow (Yosys and OpenROAD in LibreLane), and both builds are verified with the same open-source scripts. The commercial circuit artifacts originate in release v1.0.1; the verification scripts and the documentation were corrected in v2.0.2. Release v1.0.1 replaced the 8 ns route of v1.0 with an 8.25 ns route, which has a wider setup margin at the slow corner; the 8 ns release remains available at tag v1.0.
 
 \section*{Abstract}
 \begin{itemize}
 \item \textbf{Commercial build (v1.0.1).} The PicoRV32 RV32I core was taken from RTL to block-level signoff on SkyWater sky130A at 8.25 ns (about 121 MHz). The requirements were set and the decisions were approved by the designer; implementation, verification, debugging and fixes were carried out by agentic AI on a commercial implementation flow. The routed block has 8,273 cells in a 357.42 $\times$ 355.64 \textmu m die.
 \item Setup slack is +0.180 / +2.388 / +2.957 ns and hold slack is +0.716 / +0.214 / +0.034 ns at ss / tt / ff, after 0.25 ns clock uncertainty. Slew, capacitance and fanout violations are 0 at all three corners.
-\item DRC (Magic and KLayout), antenna and LVS are clean, and both LEC steps are equivalent. The post-layout gate-level run of the golden program passes at 8.25 ns and the 4.125 ns control fails; a re-run in Xcelium with flop timing checks enforced also passes at 8.25 ns with 0 violations.
+\item DRC (Magic and KLayout), antenna and LVS are clean, and both LEC steps are equivalent. The post-layout functional simulation of the golden program, with partial SDF timing (Icarus Verilog), passes at 8.25 ns and the 4.125 ns control fails; the CVC timing-check simulation released with v2.0.2 passes at 8.25 ns with 0 timing violations; a re-run in Xcelium with flop timing checks enforced also passes at 8.25 ns with 0 violations.
 \item Static IR drop is 11 mV on VPWR and 11.6 mV on VGND against an 80 mV budget, and power is 13.0 mW (static, vectorless).
 \item Six defects that each passed a tool's own report were found and corrected by agentic AI (section~\ref{sec:caught}). Signoff is at nominal RC (section~\ref{sec:rc}).
 \item \textbf{Open build (v2.0).} The same RTL, under the byte-identical constraint file, was implemented with Yosys and OpenROAD in LibreLane 3.0.14, with private modifications to OpenROAD that are not published (section~\ref{sec:openimpl}). The die is 480.21 $\times$ 490.93 \textmu m at 45\% configured core utilization, with 144,143 transistors in logic cells.
-\item In the shipped OpenSTA run, setup slack is +0.129 / +2.028 / +2.706 ns and hold slack is +0.744 / +0.235 / +0.054 ns at ss / tt / ff, with 0 slew, capacitance and fanout violations. DRC (Magic and KLayout), antenna and LVS are clean. Simulation passes at 8.25 ns in Icarus Verilog and in Xcelium with 0 timing violations, and both controls fail. Both equivalence steps are equivalent in Conformal. Static IR from OpenROAD PSM is 5.554 mV on VPWR and 5.573 mV on VGND (section~\ref{sec:openverify}).
+\item In the shipped OpenSTA run, setup slack is +0.129 / +2.028 / +2.706 ns and hold slack is +0.744 / +0.235 / +0.054 ns at ss / tt / ff, with 0 slew, capacitance and fanout violations. DRC (Magic and KLayout), antenna and LVS are clean. Functional simulation with partial SDF timing (Icarus Verilog) passes at 8.25 ns, and so does Xcelium with 0 timing violations; both controls fail. CVC, released with v2.0.2, passes at 8.25 ns with 0 timing violations; its 4.125 ns control fails functionally but with 0 timing-check violations, so it does not meet the control criterion. Both equivalence steps are equivalent in Conformal. Static IR from OpenROAD PSM is 5.554 mV on VPWR and 5.573 mV on VGND (section~\ref{sec:openverify}).
 \item Five defects found during the v2.0 work were fixed by agentic AI, among them a disagreement between two antenna checkers and a constraint mismatch (section~\ref{sec:v2defects}).
-\item For each build, the release covers the following checks. Timing was signed off at three corners with 0.25 ns clock uncertainty. DRC was run with two independent decks, LVS was run against the routed netlist, and logic equivalence was checked at both synthesis and routing. Post-layout gate-level simulation was run with flop timing checks, and static IR was analyzed. Each verify script was checked to fail on a deliberately damaged input. Every reported figure is traceable to frozen, checksummed evidence. The physical, timing and simulation checks can be reproduced from either public package with open-source tools.
+\item For each build, the release covers the following checks. Timing was signed off at three corners with 0.25 ns clock uncertainty. DRC was run with two independent decks, LVS was run against the routed netlist, and logic equivalence was checked at both synthesis and routing. Post-layout gate-level simulation was run with flop timing checks, and static IR was analyzed. Each verify script was checked to fail on a deliberately damaged input. Every reported figure is traceable to frozen, checksummed evidence. The released package provides scripts and evidence for the checks listed in the verification table of its README. Icarus results establish functional simulation with partial SDF timing. CVC is the timing-check simulator of record; its released results and coverage are identified separately. Private commercial-tool and private open-tool results, implementation reconstruction and externally sourced background are outside the repository's reproduction guarantee.
 \end{itemize}
 
 \section*{Background: PicoRV32}
-PicoRV32 is a CPU core by Claire Xenia Wolf that implements the RISC-V RV32IMC instruction set. It can be configured as RV32E, RV32I, RV32IC, RV32IM or RV32IMC [1]. It is size-optimized, at 750--2,000 LUTs and 250--450 MHz on Xilinx 7-series FPGAs, and is intended mainly as an auxiliary processor in FPGA and ASIC designs [1]. Its average CPI is about 4, depending on the instruction mix. It is released under the ISC license [1].
+PicoRV32 is a CPU core by Claire Xenia Wolf that implements the RISC-V RV32IMC instruction set. It can be configured as RV32E, RV32I, RV32IC, RV32IM or RV32IMC [1]. It is size-optimized, at 750--2,000 LUTs and 250--450 MHz on Xilinx 7-series FPGAs, and is intended mainly as an auxiliary processor in FPGA and ASIC designs [1]. Its average CPI is about 4, depending on the instruction mix. It is released under the ISC license [1]. The FPGA frequency, LUT count and CPI figures and the instruction-count background below are externally sourced background; they are outside this repository's evidence and reproduction guarantee, and they are not measurements of this ASIC package.
 
 It is a general-purpose CPU. RV32I is RISC-V's base 32-bit integer instruction set: 40 distinct instructions covering integer arithmetic, logic, shifts, compares, loads, stores, branches, jumps and system [2]. M (multiply/divide) and C (compressed) are optional extensions [2].
 
@@ -115,7 +117,7 @@ Fanout limit & 10, enforced\\
 \section{Flow and signoff bar}
 Implementation and timing signoff of the v1.0.1 build use a commercial flow. Cadence Genus does synthesis, Innovus does place and route, Tempus produces timing and the SDF, Conformal checks logic equivalence, and Voltus computes IR drop.
 
-Physical signoff uses open checkers, so that anyone can re-verify the layout without the commercial tools: Magic DRC, KLayout DRC with the sky130A\_mr deck, Magic antenna check, LVS with Magic and Netgen, and gate-level simulation in Icarus Verilog using the post-layout SDF. Icarus Verilog applies SDF path delays but not flop timing checks, so the same simulation is repeated in Cadence Xcelium with those checks enforced (section 3).
+Physical signoff uses open checkers, so that anyone can re-verify the layout without the commercial tools: Magic DRC, KLayout DRC with the sky130A\_mr deck, Magic antenna check, LVS with Magic and Netgen, and functional gate-level simulation in Icarus Verilog with partial SDF timing. Icarus Verilog applies SDF path delays only in part (interconnect annotations fail for some entries) and does not evaluate flop timing checks, so the simulation is repeated with the SDF timing checks enforced, in Cadence Xcelium and in the open-source CVC simulator (section 3).
 
 The signoff bar was set once by the designer, and the work was carried out against it by agentic AI without renegotiation per run:
 \begin{itemize}
@@ -149,9 +151,10 @@ Setup slack, ss / tt / ff & +0.180 / +2.388 / +2.957 ns; 0 violating endpoints\\
 Hold slack, ss / tt / ff & +0.716 / +0.214 / +0.034 ns; 0 of 1,626 endpoints violating, input ports included\\
 Max transition / capacitance / fanout & 0 / 0 / 0 at all three corners\\
 Golden program on RTL & Pass\\
-Golden program, post-layout gate level, ss SDF, 8.25 ns & Pass; the 4.125 ns control fails\\
+Golden program, post-layout functional simulation with partial SDF timing (Icarus), 8.25 ns & Pass; the 4.125 ns delay-sensitivity control fails\\
 Gate-level simulation with timing checks (Xcelium), 8.25 ns & Pass, 0 violations; the 4 ns control fails (76 violations)\\
-Post-layout timing wall & Passes at 8 ns, fails at 6 ns\\
+Timing-check simulation with CVC (released, 2026-10-16), 8.25 ns & Pass, 0 timing violations; 20,796 of 20,796 IOPATH, 22,090 of 22,090 INTERCONNECT and 6,228 of 6,228 TIMINGCHECK entries applied; all 9,342 timing checks given limits; the 4.125 ns control fails with 63 timing-check violations\\
+CVC at other periods, same netlist and SDF (released) & 8.0 ns: pass, 0 violations; 6.0 ns: fail (RESULT timeout, 37 violations). Two periods on one workload\\
 Static IR drop, VPWR / VGND & 11 mV / 11.6 mV; budget 80 mV each (5\% of 1.6 V)\\
 \bottomrule
 \end{tabularx}
@@ -181,7 +184,7 @@ Static IR drop, VPWR / VGND & 11 mV / 11.6 mV; budget 80 mV each (5\% of 1.6 V)\
 \caption*{Setup and hold slack per corner at 8.25 ns, including 0.25 ns clock uncertainty; values from the signoff results table}
 \end{figure}
 
-Each simulation result has a control: the golden program passes at 8.25 ns and the 4.125 ns control fails, and the post-layout timing wall passes at 8 ns and fails at 6 ns.
+Each simulation result has a control. The Icarus 4.125 ns control checks delay sensitivity for this workload; its failure does not establish complete SDF annotation. Icarus provides functional simulation with partial SDF timing and does not evaluate the required timing checks: the shipped commercial logs report about 5,080 failed interconnect annotations and 1,557 unsupported TIMINGCHECK warnings per run, and the open logs report 196 and 1,597. Annotation coverage is measured with CVC, the timing-check simulator of record, on the simulation SDF (the 454 port-endpoint INTERCONNECT entries removed from the full SDF are not timed): all IOPATH and TIMINGCHECK entries and all INTERCONNECT entries were applied, and CVC at 8.25 ns reports 0 timing violations while its 4.125 ns control reports 63. At 8.0 ns CVC reports 0 violations; at 6.0 ns the program times out with 37 violations. These are two further periods on one workload and do not locate a general timing limit.
 
 Post-layout gate-level simulation was re-run in Cadence Xcelium with flop timing checks enforced, using the same netlist, SDF and testbench. Every timing check in the SDF was applied: 3,114 setup/hold checks and 3,114 pulse-width checks (100\%). At 8.25 ns the program passes with 0 timing-check violations, and at 10 ns it passes with 0. At 4 ns, the control, it times out with 76 violations.
 
@@ -192,7 +195,7 @@ Post-layout gate-level simulation was re-run in Cadence Xcelium with flop timing
 \end{figure}
 
 \section{Open-flow implementation}\label{sec:openimpl}
-Release v2.0 adds a second implementation of the same RTL under the same constraint file. The file \sk{constraints/picorv32.sdc} is byte-identical in both packages (sha256 prefix \sk{14469a66864f3bda}). It sets an 8.25 ns clock with 0.25 ns uncertainty, a maximum fanout of 10 and a half-period I/O delay of 4.125 ns, because the testbench drives on the falling edge. The ports \sk{mem\_la\_*}, \sk{pcpi\_*}, \sk{eoi} and \sk{trace\_*} are unconstrained.
+Release v2.0 adds a second implementation of the same RTL under the same constraint file. The file \sk{constraints/picorv32.sdc} is byte-identical in both packages (sha256 prefix \sk{286822dc54798fb9}). It sets an 8.25 ns clock with 0.25 ns uncertainty, a maximum fanout of 10 and a half-period I/O delay of 4.125 ns, because the testbench drives on the falling edge. The outputs \sk{mem\_la\_read}, \sk{mem\_la\_write}, \sk{mem\_la\_addr[*]}, \sk{mem\_la\_wdata[*]}, \sk{mem\_la\_wstrb[*]}, \sk{pcpi\_valid}, \sk{pcpi\_insn[*]}, \sk{pcpi\_rs1[*]}, \sk{pcpi\_rs2[*]}, \sk{eoi[*]} and \sk{trace\_*} have no output-delay constraints. The PCPI inputs \sk{pcpi\_wr}, \sk{pcpi\_rd[*]}, \sk{pcpi\_wait} and \sk{pcpi\_ready} have 4.125 ns input delays.
 
 The open build was produced with LibreLane 3.0.14 in its Classic flow:
 \begin{itemize}
@@ -247,7 +250,7 @@ LVS size & 11,237 devices and 10,944 nets\\
 \end{tabularx}
 \end{center}
 
-The transistor count uses the method of the shipped \sk{verify/transistors.sh}: the DEF components multiplied by the transistors per cell in the PDK cell SPICE. The commercial build has no decap cells, so its 87,237 transistors are all in logic cells. The open build was implemented with open\_pdks \sk{8afc8346}, the version LibreLane 3.0.14 selects, whose cell LEF and ss/tt timing libraries are byte-identical to those of open\_pdks \sk{97d08448}. Both builds were verified with \sk{97d08448}.
+The transistor count uses the method of the shipped \sk{verify/transistors.sh}: the DEF components multiplied by the transistors per cell in the PDK cell SPICE. The commercial build has no decap cells, so its 87,237 transistors are all in logic cells. The open build is reported to have been implemented with open\_pdks \sk{8afc8346}, the version LibreLane 3.0.14 selects; that is reported from private runs and no released environment record establishes it. A readback of two PDK installs on 2026-10-16 found the cell LEF, the ss and tt timing libraries and \sk{primitives.v} byte-identical, and the ff timing library and the \sk{sky130\_fd\_sc\_hd.v} cell model different (\sk{reports/environment/}). Both builds were verified with \sk{97d08448}.
 
 \section{Open-flow verification}\label{sec:openverify}
 Every result in this section was measured on the final open layout. Timing, DRC, antenna, LVS and the Icarus Verilog simulation come from a run of the shipped open-source scripts; the other results name their tool.
@@ -267,7 +270,7 @@ ff & +2.706 ns & +0.054 ns\\
 \end{tabular}
 \end{center}
 
-The flow's own 9-corner signoff gives a max\_ss setup slack of +0.026 ns at max RC, a nom\_ss setup slack of +0.129 ns and a min\_ff hold slack of +0.051 ns. Slew, capacitance and fanout are 0 at all corners.
+The released OpenSTA evidence covers ss, tt and ff using the same nominal-RC SPEF. Nine-corner signoff is reported from private open-tool runs, not released in this repository.
 
 \subsection*{Physical checks}
 \begin{itemize}
@@ -277,7 +280,7 @@ The flow's own 9-corner signoff gives a max\_ss setup slack of +0.026 ns at max 
 \end{itemize}
 
 \subsection*{Simulation}
-Icarus Verilog with the post-layout SDF passes at 8.25 ns (RESULT 55, VERDICT PASS), and the 4.125 ns control fails (RESULT timeout).
+Icarus Verilog, as functional simulation with partial SDF timing, passes at 8.25 ns (RESULT 55, VERDICT PASS), and the 4.125 ns delay-sensitivity control fails (RESULT timeout). CVC with the SDF timing checks, run on 2026-10-16 on the shipped simulation SDF, passes at 8.25 ns (RESULT 55) with 0 timing violations: 26,463 of 26,463 IOPATH and 6,388 of 6,388 TIMINGCHECK entries were applied, 25,989 of 26,002 INTERCONNECT entries were applied with 13 zero-delay entries skipped, and all 9,582 timing checks were given limits. Its 4.125 ns control fails functionally (RESULT timeout) with 0 timing-check violations, so by the control criterion (a failure with at least one timing-check violation) the open build's CVC control is not a pass; it shows delay sensitivity of the workload, not a live timing check. The open simulation SDF retains 70 port-origin INTERCONNECT entries, including the clock.
 
 Xcelium 24.03 was run with the SDF and flop timing checks (\sk{-neg\_tchk}), in the same harness as the v1.0.1 run. Of the setup/hold checks, 3,194 were annotated (100\%).
 \begin{itemize}
@@ -319,8 +322,8 @@ No Voltus run exists on the open layout.
  & Commercial (v1.0.1) & Open (v2.0)\\
 \midrule
 Clock / constraints & 8.25 ns, identical SDC & 8.25 ns, identical SDC\\
-ss setup (shipped OpenSTA, nominal RC) & +0.280 ns (OpenSTA) / +0.180 ns (signoff timer) & +0.129 ns\\
-ff hold & +0.034 ns & +0.054 ns\\
+ss setup (shipped OpenSTA, nominal RC) & +0.280 ns & +0.129 ns\\
+ff hold (shipped OpenSTA, nominal RC) & +0.032 ns & +0.054 ns\\
 Die & 357.42 $\times$ 355.64 \textmu m & 480.21 $\times$ 490.93 \textmu m (45\% configured utilization)\\
 Logic transistors & 87,237 & 144,143\\
 DRC / antenna / LVS & 0 / 0 / match & 0 / 0 / match\\
@@ -348,7 +351,7 @@ DRC / antenna / LVS (open tools in both) & Magic, KLayout, Netgen; 0 / 0 / match
 \bottomrule
 \end{tabularx}
 \end{center}
-Conformal and Xcelium were used for the open build as well. The open equivalence method did not prove the RTL-to-netlist step for this design (586 of 1,864 key points; the x-aware sequential proof was undecided after 2 h), and Icarus Verilog does not evaluate timing checks. The open build's implementation uses no commercial tool.
+Conformal and Xcelium were used for the open build as well. The open equivalence method did not prove the RTL-to-netlist step for this design (586 of 1,864 key points; the x-aware sequential proof was undecided after 2 h), and Icarus Verilog does not evaluate timing checks (CVC, released, does). The open build's implementation uses no commercial tool.
 
 \section{Software developed for this work}\label{sec:software}
 The design was implemented and verified by an agentic chip-design framework under the designer's direction. The software developed for it falls into three groups.
@@ -370,7 +373,7 @@ The requirements were set and the decisions were approved by the designer. Imple
 \item \textbf{Every number traces to its source.} Every figure is traceable to the run and input files that produced it. Nothing is quoted from memory or from a log summary.
 \item \textbf{Evidence is frozen.} Cited evidence is frozen and checksummed. The final signoff of the commercial build has 75 frozen evidence files (66 at signoff plus 9 from the Xcelium re-run), all verified, with 0 mismatches.
 \item \textbf{Every physical, DRV and simulation check has a control.} A check is trusted after it has been shown to fail on a known-bad input. Gate-level simulation must fail at 4 ns. The antenna check must fail on a frozen known-bad layout. The slew, capacitance and fanout check must flag a deliberately overloaded net (a 5 pF load). The KLayout deck must fail on a planted violation. A check that passes every input is treated as broken.
-\item \textbf{Refusal over silence.} A check that cannot run, or whose output cannot be read, is counted as a failure and never as a pass.
+\item \textbf{Refusal over silence.} A check that cannot run, or whose output cannot be read, is counted as a failure and never as a pass. The scripts clear earlier results, check every tool status and require a fresh single-line verdict; \sk{tests/test\_verify\_failures.py} tests this offline. That test shows that failures are reported as failures, not that a design is correct.
 \item \textbf{Independent checkers.} The tool that builds something is always checked by at least one other tool, because a tool checking its own work shares its own blind spots. Innovus builds the layout, but DRC is run by Magic and by KLayout, and LVS by Magic and Netgen. LVS proves the layout matches the routed netlist; Conformal LEC then proves the routed netlist equals Genus' netlist, and Genus' netlist equals the RTL. The result is an unbroken chain of independent checks from the GDS back to the source code. In the open build, OpenROAD builds the layout, and the same open checkers and Conformal verify it.
 \end{enumerate}
 
@@ -529,34 +532,17 @@ ss setup at 8.25 ns is +0.55 ns with nominal RC and +0.34 ns with max RC, so max
 The figures of about $-$0.03 ns at max RC and about 8.3 ns to close are an estimate combining two extractors: the 0.21 ns shift measured with OpenRCX and OpenSTA is applied to the signoff margin of +0.180 ns.
 
 \section{Cost}
-The figures below describe the commercial flow of v1.0.1. All counts run from 1 Oct through the 8 ns signoff (7 Oct, 16:15 EDT), and the figures are held as frozen evidence. The 8.25 ns re-run added 21 cluster jobs and 2.0 h of wall time.
-
-\begin{center}
-\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.42\linewidth}>{\raggedright\arraybackslash}X@{}}
-\toprule
-Item & Figure\\
-\midrule
-Calendar time & 1 to 7 Oct 2026, from the start of the commercial flow on the open sky130 PDK to block signoff\\
-One full signoff pass, synthesis through the clock sweep & 38 min of compute, 45 min end to end\\
-Commercial cluster jobs & 62 jobs, 5.1 h total wall time\\
-Agentic AI calls & 2,907\\
-Output tokens & 1.26 M\\
-Input tokens & 0.89 B cached tokens read, 32 M written to cache, about 6.5 k uncached\\
-\bottomrule
-\end{tabularx}
-\end{center}
-
-About 3.1 hours of designer interaction were spent over 7 days, in 86 messages. The requirements were set and each decision was approved by the designer. Implementation, verification, debugging and fixes were carried out by agentic AI. Times were measured from message timestamps, with gaps under 20 minutes counted as work. Token and time figures are upper bounds, because parallel work outside this design was included.
+Development cost and elapsed-time accounting are not evidenced in this repository.
 
 \section{Limitations}
 Packaging, electromigration, metal fill, pad frame, foundry precheck and dynamic IR were outside the scope of this block-level release. Items 1 and 3 apply to the commercial build; items 2 and 4 apply to both builds; items 5 and 6 apply to the open build.
 \begin{enumerate}
 \item \textbf{Nominal RC.} Signoff is at nominal RC (section~\ref{sec:rc}).
-\item \textbf{I/O timing.} I/O timing is set to the testbench's half-cycle memory protocol. The look-ahead outputs (\sk{mem\_la\_*}) and the other outputs that the testbench does not sample are unconstrained.
+\item \textbf{I/O timing.} I/O timing is set to the testbench's half-cycle memory protocol. The outputs \sk{mem\_la\_read}, \sk{mem\_la\_write}, \sk{mem\_la\_addr[*]}, \sk{mem\_la\_wdata[*]}, \sk{mem\_la\_wstrb[*]}, \sk{pcpi\_valid}, \sk{pcpi\_insn[*]}, \sk{pcpi\_rs1[*]}, \sk{pcpi\_rs2[*]}, \sk{eoi[*]} and \sk{trace\_*} have no output-delay constraints; the PCPI inputs \sk{pcpi\_wr}, \sk{pcpi\_rd[*]}, \sk{pcpi\_wait} and \sk{pcpi\_ready} have 4.125 ns input delays.
 \item \textbf{Thin margins.} The margins are ss setup +0.180 ns and ff hold +0.034 ns, after 0.25 ns uncertainty.
-\item \textbf{Workload.} The post-layout simulation runs one 9-instruction program covering 6 of 40 RV32I opcodes; LEC and STA cover the whole design.
+\item \textbf{Workload.} The post-layout simulation runs one 9-instruction program covering 6 of 40 RV32I opcodes. Logic equivalence concerns the configured design (default parameters). STA covers the paths constrained by the shipped SDC; it does not establish timing coverage for every interface. CVC times the simulation SDF, which lacks the port-endpoint INTERCONNECT entries, on one workload.
 \item \textbf{Open-build IR.} The static IR of the open build comes from OpenROAD PSM with private modifications. No Voltus run exists on the open layout; the PSM method was validated on the commercial layout.
-\item \textbf{Commercial checks of the open build.} The equivalence results (Conformal) and the timing-checked simulation (Xcelium) of the open build use commercial tools and are not regenerated by the open scripts.
+\item \textbf{Commercial checks of the open build.} The equivalence results (Conformal) and the Xcelium timing-checked simulation of the open build use commercial tools and are not regenerated by the open scripts; the timing-checked simulation is reproduced with CVC.
 \end{enumerate}
 
 \section{Reproducing}
@@ -567,7 +553,7 @@ The repository at \url{https://github.com/raisul1212/trace-v} contains two self-
 \item constraints, SPEF and SDF;
 \item the testbench;
 \item verify/ scripts for the open-source tools;
-\item the reports from the open-tool verification run;
+\item the reports from the open-tool verification run (the v2.0.1 run; v2.0.2 changed the scripts and did not repeat it), and the CVC, area and library-comparison results newly run on 2026-10-16;
 \item SHA256SUMS.
 \end{itemize}
 The repository root holds the README, LICENSE, NOTICE, LICENSES/ and docs/ with the presentation and whitepaper PDFs.
