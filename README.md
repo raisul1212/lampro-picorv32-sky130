@@ -6,20 +6,28 @@ block-level implementation of [PicoRV32](https://github.com/YosysHQ/picorv32)
 `sky130_fd_sc_hd` standard-cell library, clocked at 8.25 ns (about 121 MHz). The repository is
 https://github.com/raisul1212/trace-v.
 
-Release v2.0 contains two implementations of the same design. The same RTL and the same
+TRACE-V is a worked example of block-level implementation and verification. Reported signoff is
+limited to the stated checks, constraints and conditions. It is not fab-ready.
+
+This is release v2.0.2. It contains two implementations of the same design (introduced in v2.0). The same RTL and the same
 constraint file (`constraints/picorv32.sdc`, byte-identical in both folders) were implemented by
 a commercial flow (Cadence Genus and Innovus) and by an open flow (Yosys and OpenROAD in LibreLane).
 Both builds are verified with the same open-source scripts.
 
-* `commercial/` is the v1.0.1 release, unchanged.
-* `open/` is the open-flow build, new in v2.0.
+* `commercial/` holds the v1.0.1 circuit artifacts (layout, netlists, SPEF, SDF, constraints). The verification scripts, reports and documentation in it were corrected in v2.0.2.
+* `open/` is the open-flow build, introduced in v2.0, with the same corrections in v2.0.2.
 
 Each folder is a self-contained package with its own `verify/`, `reports/` and `SHA256SUMS`.
 Each build was signed off at three corners with 0.25 ns clock uncertainty. DRC was run with two
 independent decks, LVS against the routed netlist, and logic equivalence at both synthesis and
 routing. Post-layout gate-level simulation was run with flop timing checks, and static IR was
-analyzed. The physical, timing and simulation checks can be reproduced from either folder with
-open-source tools.
+analyzed.
+
+The released package provides scripts and evidence for the checks listed in the verification table.
+Icarus results establish functional simulation with partial SDF timing. CVC is the timing-check
+simulator of record; its released results and coverage are identified separately (`reports/cvc/`).
+Private commercial-tool and private open-tool results, implementation reconstruction and externally
+sourced background are outside the repository's reproduction guarantee.
 
 ## License
 
@@ -36,19 +44,22 @@ This design was implemented and signed off by an agentic chip-design framework. 
 * v1.0: PicoRV32 at 8 ns from the commercial flow; it remains available at tag v1.0.
 * v1.0.1: the 8 ns route was replaced by an 8.25 ns route, which has a wider setup margin at the slow corner.
 * v2.0: the v1.0.1 build moved to `commercial/`, unchanged, and an open-flow build of the same RTL under the same constraints was added in `open/`.
+* v2.0.2: corrections to the verification scripts, the descriptions of the simulation checks, the evidence scope and the area accounting; see Corrections. Circuit artifacts and SDC commands are unchanged.
 
 ## The two builds side by side
 
-Both builds use the constraints in `constraints/picorv32.sdc` (sha256 prefix `14469a66864f3bda`):
+Both builds use the constraints in `constraints/picorv32.sdc` (sha256 prefix `286822dc54798fb9`):
 an 8.25 ns clock with 0.25 ns uncertainty, a maximum fanout of 10, and a half-period I/O delay of
-4.125 ns, because the testbench drives on the falling edge. The ports `mem_la_*`, `pcpi_*`, `eoi`
-and `trace_*` are unconstrained.
+4.125 ns, because the testbench drives on the falling edge. The outputs `mem_la_read`,
+`mem_la_write`, `mem_la_addr[*]`, `mem_la_wdata[*]`, `mem_la_wstrb[*]`, `pcpi_valid`, `pcpi_insn[*]`,
+`pcpi_rs1[*]`, `pcpi_rs2[*]`, `eoi[*]` and `trace_*` have no output-delay constraints. The PCPI inputs
+`pcpi_wr`, `pcpi_rd[*]`, `pcpi_wait` and `pcpi_ready` have 4.125 ns input delays.
 
 | | commercial (v1.0.1) | open (v2.0) |
 |---|---|---|
 | clock / constraints | 8.25 ns, identical SDC | 8.25 ns, identical SDC |
-| ss setup (shipped OpenSTA, nominal RC) | +0.280 ns (OpenSTA) / +0.180 ns (signoff timer) | +0.129 ns |
-| ff hold | +0.034 ns | +0.054 ns |
+| ss setup (shipped OpenSTA, nominal RC) | +0.280 ns | +0.129 ns |
+| ff hold (shipped OpenSTA, nominal RC) | +0.032 ns | +0.054 ns |
 | die | 357.42 x 355.64 um | 480.21 x 490.93 um (45 % configured utilization) |
 | logic transistors | 87,237 | 144,143 |
 | DRC / antenna / LVS | 0 / 0 / match | 0 / 0 / match |
@@ -67,6 +78,7 @@ open build); the PSM method, run on the commercial layout, gives 12.09 / 12.07 m
 | Timing, shipped OpenSTA script | ss setup +0.280 ns, ff hold +0.032 ns | ss setup +0.129 ns, ff hold +0.054 ns |
 | Static IR, worst VPWR | Cadence Voltus; 11.0 mV | OpenROAD PSM, modified; 5.55 mV. On the commercial layout: 12.09 mV (unmodified PSM: 46.4 mV) |
 | Logic equivalence (commercial tool in both) | Conformal 24.10; RTL → netlist → routed proven | Conformal 24.10; RTL → netlist → routed proven |
+| Timing-check simulation (CVC, open tools, in both; `reports/cvc/`) | CVC 7.00b; 8.25 ns passes with 0 timing violations, 9,342 timing checks given limits; the 4.125 ns control fails with 63 timing-check violations | CVC 7.00b; 8.25 ns passes with 0 timing violations, 9,582 timing checks given limits; the 4.125 ns control fails functionally but with 0 timing-check violations |
 | Simulation with timing checks (commercial tool in both) | Xcelium 24.03; 0 violations, 3,114 checks | Xcelium 24.03; 0 violations, 3,194 checks |
 | DRC / antenna / LVS (open tools in both) | Magic, KLayout, Netgen; 0 / 0 / match | Magic, KLayout, Netgen; 0 / 0 / match |
 
@@ -152,12 +164,15 @@ The two folders have the same structure.
 | `<flow>/constraints/picorv32.sdc` | Timing constraints, byte-identical in both folders |
 | `<flow>/timing/picorv32.spef` | Extracted parasitics (nominal RC) |
 | `<flow>/timing/picorv32.sdf` | Delay file as written by the timing tool |
-| `<flow>/timing/picorv32.sim.sdf` | Same delays with the port-ended INTERCONNECT entries removed, for Icarus Verilog |
+| `<flow>/timing/picorv32.sim.sdf` | Delays for the simulations, with INTERCONNECT entries at ports removed. Commercial: the 454 entries with either endpoint at a port are removed (147 port-origin, 307 port-destination). Open: the 307 destination-port entries are removed and the 70 origin-port entries, including the clock, are retained |
 | `<flow>/sim/tb_picorv32_golden.v` | Testbench: hand-assembled RV32I program summing 1..10, stores 55 to `0x10000000` |
-| `<flow>/verify/` | One script per check; `run_all.sh` runs all of them |
-| `<flow>/reports/` | Output of `verify/run_all.sh` on that folder |
+| `<flow>/verify/` | One script per check; `run_all.sh` runs all of them. `sim_tchk.sh`, `cvc.sh` and their helpers run the CVC timing-check simulation; `area_split.py` computes the cell areas |
+| `<flow>/reports/` | Output of `verify/run_all.sh` on that folder (the v2.0.1 run; see Corrections), plus `reports/cvc/` (CVC runs of 2026-10-16), `reports/area/` (area calculation of 2026-10-16) and `reports/environment/` (library comparison of 2026-10-16) |
 | `<flow>/SHA256SUMS` | Checksums of every file in the folder except `reports/` and itself |
+| `<flow>/reports/EVIDENCE_SHA256SUMS` | Checksums of the released evidence files in `reports/` (all files except mutable work directories, itself and the log files `run_all.sh` rewrites) |
+| `tests/test_verify_failures.py` | Offline tests of the failure handling of both `verify/` directories; no PDK or EDA tools needed |
 | `docs/TRACE-V_PicoRV32_SKY130_deck.pdf`, `docs/TRACE-V_PicoRV32_SKY130_whitepaper.pdf` | Presentation and whitepaper |
+| `docs/src/` | Sources of the deck (HTML) and whitepaper (LaTeX), the figures, and the figure extractor; `docs/v2.0.2-errata.md` lists every change made to the two documents in v2.0.2 |
 | `LICENSE`, `LICENSES/`, `NOTICE` | License of this repository, the third-party licenses, and who holds what |
 
 `<flow>` is `commercial` or `open`.
@@ -171,9 +186,13 @@ All checks of both builds use this PDK:
 * `sky130_fd_sc_hd` at commit `4f4cfd106206c21fcd52b59c69749dbc90ccda07`
   ([google/skywater-pdk](https://github.com/google/skywater-pdk))
 
-The open build was implemented with open_pdks `8afc8346`, the version LibreLane 3.0.14 selects, whose
-cell LEF and ss/tt timing libraries are byte-identical to those of open_pdks `97d08448`. Both builds
-were verified with `97d08448`.
+The open build is reported to have been implemented with open_pdks `8afc8346`, the version
+LibreLane 3.0.14 selects. That is reported from private runs; no released environment record
+establishes it. A readback of two PDK installs on 2026-10-16 (`reports/environment/library-comparison.tsv`,
+with its `provenance.json`) found the cell LEF, the ss and tt timing libraries and `primitives.v`
+byte-identical, and the ff timing library and the `sky130_fd_sc_hd.v` cell model different. The ff
+results shipped here were produced with the verification install's ff library. Both builds were
+verified with `97d08448`.
 
 The PDK is installed with [volare](https://github.com/efabless/volare):
 
@@ -202,6 +221,11 @@ Icarus Verilog: Icarus Verilog version 13.0 (devel) ()
 Python:         Python 3.13.9
 ```
 
+The CVC timing-check simulation uses OSS-CVC 7.00b built with `verify/cvc-local-fixes.patch`
+(Tachyon Design Automation's open-source CVC, under its own licence); it is not in the container
+image, and `verify/cvc.sh` takes its path in `CVC`. When CVC is not installed, `cvc.sh` reports both
+CVC results as FAIL ("not run"), so `run_all.sh` does not report all checks passed.
+
 The same tools can be installed separately. Besides the checkers, the scripts use `bash`, GNU `grep`, `cut`
 and `tr`, and `python3`.
 
@@ -220,22 +244,45 @@ bash verify/run_all.sh
 
 `run_all.sh` verifies the folder's `SHA256SUMS`, prints the tool versions, runs every check below,
 writes the logs and one `*.result` file per check into that folder's `reports/`, and prints a
-summary. Each check can also be run alone (`bash verify/<name>.sh`). A check fails if its input
-does not load: an empty layout or an unreadable SPEF is reported as FAIL, not as zero violations.
-The scripts are the same in both folders, except for the expected transistor count.
+summary. Each check can also be run alone (`bash verify/<name>.sh`). Set `REPORTS` to a new
+directory to keep runs apart.
+
+A check that cannot run is a FAIL. `run_all.sh` removes all earlier results before it starts; it marks
+a check FAIL if its script exits non-zero (even if it wrote PASS first), if a result it should have
+written is missing, or if a result is not a single `PASS` or `FAIL` line; and it exits zero only if
+every expected result is a fresh PASS. Each script clears its own earlier results and uses new work
+directories, so an old PASS or an old report cannot be read as a new one. An empty layout, an
+unreadable SPEF, a crashed tool or a missing report is reported as FAIL, not as zero violations.
+`python3 tests/test_verify_failures.py` tests this failure handling offline with fake tools; it
+shows that failures are reported as failures, not that a design is correct. The scripts are the same
+in both folders, except for the expected transistor count.
 
 | Script | What it does | Expected |
 |---|---|---|
-| `verify/drc_magic.sh` | Magic full-chip DRC, `drc(full)` style, on `layout/picorv32.gds` | 0 errors |
+| `verify/drc_magic.sh` | Hierarchical DRC of the complete PicoRV32 block using Magic's `drc(full)` style, on `layout/picorv32.gds` | 0 errors |
 | `verify/drc_klayout.sh` | KLayout, SkyWater `sky130A_mr.drc` deck (FEOL, BEOL, off-grid) | 0 findings |
 | `verify/antenna_magic.sh` | Magic extraction and `antennacheck`; the feedback entries added by `antennacheck` are counted | 0 violations |
 | `verify/lvs.sh` | Magic extraction from the GDS, Netgen LVS against `netlist/picorv32.routed.pg.v` with the PDK setup file; standard cells are also compared at transistor level | `Circuits match uniquely` |
 | `verify/sta.sh` (`sta.tcl`) | OpenSTA at ss 100 C 1.60 V, tt 25 C 1.80 V, ff -40 C 1.95 V with the routed netlist, SDC and SPEF, propagated clock; the SPEF annotation is checked | setup and hold slack >= 0, no slew, capacitance or fanout violations, SPEF read without error |
-| `verify/sim.sh` | Icarus Verilog gate-level simulation with SDF back-annotation at 8.25 ns, plus a 4.125 ns negative control (half the period) | 8.25 ns: `RESULT 55`, `VERDICT PASS`; 4.125 ns: `VERDICT FAIL` |
+| `verify/sim.sh` | Icarus Verilog functional gate-level simulation with partial SDF timing at 8.25 ns, plus a 4.125 ns (half the period) delay-sensitivity control for this workload. Icarus does not evaluate the timing checks | 8.25 ns: `RESULT 55`, `VERDICT PASS`; 4.125 ns: a completed run with `VERDICT FAIL` |
+| `verify/cvc.sh` (`sim_tchk.sh`) | OSS-CVC 7.00b gate-level simulation with the SDF timing checks, on `netlist/picorv32.sim.v` and `timing/picorv32.sim.sdf`: an 8.25 ns run, a 4.125 ns negative control, a self-test of the simulator and models, and a read-back of how many SDF IOPATH, INTERCONNECT and TIMINGCHECK entries were applied | 8.25 ns: `RESULT 55`, 0 timing violations; control: a failing verdict with at least one timing-check violation |
+| `verify/area_split.py` | Cell area from the tt liberty and the netlists (not part of `run_all.sh`; see `reports/area/`) | totals in the Size rows |
 | `verify/transistors.sh` | Transistor count: cell instances in `layout/picorv32.def` times the transistors per cell in the PDK cell SPICE | 87237 (commercial), 183139 (open) |
 
-The 4.125 ns control is part of the simulation check: a passing simulation at a clock that the timing
-rejects would show that the SDF was not applied. Each verify script was checked to fail on a deliberately damaged input.
+The fast-clock negative control checks delay sensitivity for this workload. Its failure does not
+establish complete SDF annotation, and its success would not by itself establish that the SDF was
+ignored. Annotation coverage is reported independently, in `reports/cvc/`.
+
+### Icarus limitations
+
+Icarus provides functional simulation with partial SDF timing and does not evaluate the required
+timing checks. The shipped commercial logs report about 5,080 failed interconnect annotations (the
+log lines are interleaved, so the count varies by a few with the search pattern) and 1,557
+unsupported TIMINGCHECK warnings per run; the open logs report 196 and 1,597, respectively. The open
+simulation SDF also retains 70 port-origin entries, including the clock. Passing functionality and a
+failing fast-clock control do not establish complete timing annotation. The logs are
+`reports/sim_8.25.log` and `reports/sim_4.125.log` in each folder. Measured CVC coverage is reported
+separately below and is not a property of Icarus.
 
 ## Results: commercial flow (v1.0.1, unchanged)
 
@@ -257,7 +304,7 @@ Produced with commercial signoff tools and recorded in the project ledger. The s
 | Hold slack, ss / tt / ff | +0.716 / +0.214 / +0.034 ns |
 | Clock uncertainty | 0.25 ns, included in the slacks above |
 | Slew, capacitance, fanout violations | 0 at all corners |
-| Gate-level simulation (Icarus Verilog) | passes at 8.25 ns; the control fails |
+| Functional gate-level simulation with partial SDF timing (Icarus Verilog) | passes at 8.25 ns; the control fails |
 | Gate-level simulation with timing checks (Xcelium) | 0 violations at 8.25 ns, with 3,114 setup/hold checks applied; the 4 ns control fails with 76 violations |
 | Static IR drop | VPWR 11 mV / VGND 11.6 mV against an 80 mV budget |
 | Power | 13.0 mW at 20% activity |
@@ -271,8 +318,8 @@ The checks were run in a fresh copy of `commercial/`, inside the container `ghcr
 |---|---|---|
 | Package checksums | PASS | SHA256SUMS verified |
 | Transistor count (DEF x PDK cell SPICE) | PASS | 87237 transistors in 20924 DEF components (136 cell types) |
-| Gate-level simulation, 8.25 ns | PASS | RESULT 55, VERDICT PASS |
-| Simulation negative control, 4.125 ns | PASS | control fails as expected (RESULT trap) |
+| Functional simulation with partial SDF timing (Icarus), 8.25 ns | PASS | RESULT 55, VERDICT PASS |
+| Icarus delay-sensitivity control, 4.125 ns | PASS | control fails as expected (RESULT trap) |
 | OpenSTA ss (100 C, 1.60 V) | PASS | setup 0.280 ns, hold 0.712 ns, slew/cap/fanout violations 0/0/0, SPEF annotated 8384 of 8557 drivers (173 unannotated) |
 | OpenSTA tt (25 C, 1.80 V) | PASS | setup 2.403 ns, hold 0.212 ns, slew/cap/fanout violations 0/0/0, SPEF annotated 8384 of 8557 drivers (173 unannotated) |
 | OpenSTA ff (-40 C, 1.95 V) | PASS | setup 2.964 ns, hold 0.032 ns, slew/cap/fanout violations 0/0/0, SPEF annotated 8384 of 8557 drivers (173 unannotated) |
@@ -283,10 +330,33 @@ The checks were run in a fresh copy of `commercial/`, inside the container `ghcr
 
 Notes on this run:
 
-* The ss setup slack is +0.280 ns in OpenSTA and +0.180 ns in the commercial signoff timer; both meet timing. The setup slack is the worst over all paths, including the half-period input and output paths.
+* The ss setup slack is +0.280 ns in OpenSTA and +0.180 ns in the commercial signoff timer; both meet timing. The setup slack is the worst over the constrained paths reported by this run, including the half-period input and output paths. STA covers paths constrained by the shipped SDC; it does not establish timing coverage for every interface.
 * LVS: the antenna diodes are written by Magic as an instance with `perim=`, and by the PDK cell SPICE as a diode element with `pj=`. `verify/lvs.sh` rewrites that one line of the extracted SPICE (same values) before Netgen runs; without it, Netgen fails on every diode cell. LVS compares 8,273 cell instances and 8,492 nets, and each library cell is also compared at transistor level against the PDK SPICE.
 * The transistor count is derived from the DEF components, which include tap and filler cells (zero transistors); the cell count in the signoff table is counted differently.
-* A gate-level simulation at 4.125 ns (control) must fail; the core traps and `RESULT trap` is printed. At 8.25 ns, `RESULT 55` and `VERDICT PASS` are printed.
+* The Icarus simulation at 4.125 ns (control) fails for this workload; the core traps and `RESULT trap` is printed. At 8.25 ns, `RESULT 55` and `VERDICT PASS` are printed. This is a delay-sensitivity check, not an annotation-coverage check.
+* The table above is the v2.0.1 run of `run_all.sh`; v2.0.2 changed the scripts and did not repeat that run (see Corrections). The CVC and area results below were newly run on 2026-10-16.
+
+### Timing-check simulation with CVC (commercial build)
+
+Newly executed on 2026-10-16 with OSS-CVC 7.00b on the shipped `netlist/picorv32.sim.v` and
+`timing/picorv32.sim.sdf` (the commercial SDF is Tempus output, already shipped; the CVC outputs are
+not Tempus output). Files, hashes and commands are in `reports/cvc/` (`summary.json`, `coverage.json`,
+`provenance.json`, native logs in gzip).
+
+| Check | Status | Detail |
+|---|---|---|
+| CVC self-test | PASS | 12 probes on the simulator, the models and the delay elements |
+| CVC, 8.25 ns | PASS | RESULT 55, VERDICT PASS, 0 timing violations |
+| CVC negative control, 4.125 ns | PASS | RESULT timeout, VERDICT FAIL, 63 timing-check violations |
+
+SDF entries applied (counts over `picorv32.sim.sdf`): IOPATH 20,796 of 20,796; INTERCONNECT 22,090
+of 22,090 (0 zero-delay skipped, 0 unapplied); TIMINGCHECK 6,228 of 6,228. All 9,342 timing checks in the
+design were given limits. The 454 port-endpoint INTERCONNECT entries removed from the full SDF to
+make the simulation SDF were not timed by CVC.
+
+CVC at two further periods on the same inputs (`reports/cvc/sweep/`): at 8.0 ns, RESULT 55 with 0
+timing violations; at 6.0 ns, RESULT timeout with 37 timing-check violations (the 4 ns control gave 76).
+Two periods on one workload do not locate a general timing limit.
 
 ### Limitations of the commercial build
 
@@ -302,7 +372,7 @@ The package was derived from the working run directory without changing the desi
 * Eight buffer instances named by the flow were renamed `alias_1` to `alias_8` consistently in every netlist, the DEF, the SPEF and the SDFs.
 * `constraints/picorv32.sdc`: the leading comment lines were rewritten; every command is byte-identical.
 * `sim/tb_picorv32_golden.v`: the leading comment block was rewritten; the code is unchanged.
-* `timing/picorv32.sim.sdf` is `timing/picorv32.sdf` with the INTERCONNECT entries ending at a port removed (454 entries; Icarus Verilog cannot annotate them).
+* `timing/picorv32.sim.sdf` is `timing/picorv32.sdf` with the INTERCONNECT entries that have either endpoint at a port removed: 454 entries, 147 port-origin and 307 port-destination. The open build's simulation SDF is made differently: it removes the 307 destination-port entries and retains the 70 origin-port entries, including the clock. Neither released SDF was rewritten in v2.0.2.
 * `rtl/picorv32.v` is the upstream file, byte for byte.
 
 ## Results: open flow (v2.0)
@@ -333,8 +403,8 @@ The checks were run in `open/`, inside the container `ghcr.io/librelane/librelan
 |---|---|---|
 | Package checksums | PASS | SHA256SUMS verified |
 | Transistor count (DEF x PDK cell SPICE) | PASS | 183139 transistors in 45691 DEF components (128 cell types) |
-| Gate-level simulation, 8.25 ns | PASS | RESULT 55, VERDICT PASS |
-| Simulation negative control, 4.125 ns | PASS | control fails as expected (RESULT timeout) |
+| Functional simulation with partial SDF timing (Icarus), 8.25 ns | PASS | RESULT 55, VERDICT PASS |
+| Icarus delay-sensitivity control, 4.125 ns | PASS | control fails as expected (RESULT timeout) |
 | OpenSTA ss (100 C, 1.60 V) | PASS | setup 0.129 ns, hold 0.744 ns, slew/cap/fanout violations 0/0/0, SPEF annotated 10696 of 11009 drivers (313 unannotated) |
 | OpenSTA tt (25 C, 1.80 V) | PASS | setup 2.028 ns, hold 0.235 ns, slew/cap/fanout violations 0/0/0, SPEF annotated 10696 of 11009 drivers (313 unannotated) |
 | OpenSTA ff (-40 C, 1.95 V) | PASS | setup 2.706 ns, hold 0.054 ns, slew/cap/fanout violations 0/0/0, SPEF annotated 10696 of 11009 drivers (313 unannotated) |
@@ -343,9 +413,27 @@ The checks were run in `open/`, inside the container `ghcr.io/librelane/librelan
 | Antenna, Magic | PASS | 0 antenna violations (30900 gates analyzed.; 3 extraction warning(s)) |
 | LVS, Magic + Netgen | PASS | Circuits match uniquely; Circuit 1 contains 11237 devices, Circuit 2 contains 11237 devices. Circuit 1 contains 10944 nets, Circuit 2 contains 10944 nets. |
 
-STA uses the shipped `verify/sta.tcl`, the nominal SPEF and the shared SDC. The flow's own
-9-corner signoff gives max_ss setup +0.026 ns (max RC), nom_ss setup +0.129 ns and min_ff hold
-+0.051 ns, with slew, capacitance and fanout at 0 in every corner.
+STA uses the shipped `verify/sta.tcl`, the nominal SPEF and the shared SDC. The released OpenSTA
+evidence covers ss, tt and ff using the same nominal-RC SPEF. Nine-corner signoff is reported from
+private open-tool runs, not released in this repository.
+
+### Timing-check simulation with CVC (open build)
+
+Newly executed on 2026-10-16 with OSS-CVC 7.00b on the shipped `netlist/picorv32.sim.v` and
+`timing/picorv32.sim.sdf`; files in `reports/cvc/`.
+
+| Check | Status | Detail |
+|---|---|---|
+| CVC self-test | PASS | 12 probes on the simulator, the models and the delay elements |
+| CVC, 8.25 ns | PASS | RESULT 55, VERDICT PASS, 0 timing violations |
+| CVC negative control, 4.125 ns | FAIL | RESULT timeout, VERDICT FAIL, but 0 timing-check violations: the control criterion is a failure with at least one timing-check violation |
+
+SDF entries applied: IOPATH 26,463 of 26,463; INTERCONNECT 26,002 entries, 25,989 applied and 13
+zero-delay skipped by CVC (0 unapplied); TIMINGCHECK 6,388 of 6,388. All 9,582 timing checks in the
+design were given limits. The 307 destination-port INTERCONNECT entries removed from the full SDF were
+not timed by CVC. At 4.125 ns the core fails to finish (a functional timeout) without any timing-check
+violation being reported, so this control shows delay sensitivity of the workload, not a live timing
+check. The 8.25 ns run is a pass; the open build's CVC control is not.
 
 ### Checks with other tools
 
@@ -374,12 +462,25 @@ run exists on the open layout.
 
 ## Limitations
 
-* The I/O timing of both builds is set to the testbench's half-cycle protocol: inputs are driven and outputs are sampled on the falling clock edge. The ports `mem_la_*`, `pcpi_*`, `eoi` and `trace_*` are unconstrained.
-* The post-layout simulation runs one 9-instruction program covering 6 of 40 RV32I opcodes; LEC and STA cover the whole design.
-* Logic equivalence (Conformal) and the timing-checked simulation (Xcelium) use commercial tools and are not regenerated by the open scripts.
+* The I/O timing of both builds is set to the testbench's half-cycle protocol: inputs are driven and outputs are sampled on the falling clock edge. The outputs `mem_la_read`, `mem_la_write`, `mem_la_addr[*]`, `mem_la_wdata[*]`, `mem_la_wstrb[*]`, `pcpi_valid`, `pcpi_insn[*]`, `pcpi_rs1[*]`, `pcpi_rs2[*]`, `eoi[*]` and `trace_*` have no output-delay constraints; the PCPI inputs `pcpi_wr`, `pcpi_rd[*]`, `pcpi_wait` and `pcpi_ready` have 4.125 ns input delays.
+* The post-layout simulation runs one 9-instruction program covering 6 of 40 RV32I opcodes. Logic equivalence concerns the configured design (default parameters). STA covers the paths constrained by the shipped SDC; it does not establish timing coverage for every interface.
+* The timing-check simulation (CVC) times the simulation SDF, which lacks the port-endpoint INTERCONNECT entries listed above, and runs one workload.
+* Logic equivalence (Conformal) uses a commercial tool and is not regenerated by the open scripts. The earlier Xcelium runs are not regenerated by them either; the timing-checked simulation is reproduced with CVC.
 * Scope: packaging, electromigration, metal fill, seal ring, pad frame, foundry precheck and dynamic IR were outside the scope of this block-level release.
 
 ## Corrections
+
+**v2.0.2.** Verification failure propagation, stale-result handling, KLayout report serialization, the descriptions of the timing simulations, the evidence scope and the area accounting were corrected. Circuit artifacts and SDC commands are unchanged (the SDC comment block was corrected; every command is byte-identical).
+
+* `run_all.sh` and the check scripts discarded tool exit statuses and could read results left by an earlier run, so a check that could not run could be reported as passing. They now clear earlier results, check every tool status and require a fresh single-line verdict; `sim.sh` and `drc_klayout.sh` were reworked, and `tests/test_verify_failures.py` tests the failure handling offline. None of the EDA checks was rerun: the PASS results in `reports/` are the v2.0.1 run. Newly run in v2.0.2: the CVC runs, the area calculation and the library comparison, each dated in its `provenance.json`.
+* Both shipped `reports/klayout_drc.lyrdb` files were not well-formed XML (the sanitizer wrote an unescaped `<PDK_ROOT>` into the generator text). The one token was repaired to `&lt;PDK_ROOT&gt;`; the file parses and has zero items. This is a serialization repair of historical evidence, not a new DRC run; the old and new hashes are in `docs/v2.0.2-errata.md`.
+* The Icarus simulation is described as functional simulation with partial SDF timing, with its limitations stated. CVC timing-check results and SDF coverage are released in `reports/cvc/`, including the open build's control, which does not meet the control criterion.
+* The area totals in this README are now reproduced by `verify/area_split.py` (`reports/area/`); the tap-inclusive open total is 122,928 um2 including taps and 119,009 um2 excluding taps.
+* The ports described as unconstrained were corrected (the PCPI inputs carry input delays); the simulation-SDF transformations of the two builds are described separately; the ff hold in the side-by-side table is the shipped OpenSTA value.
+* The cell LEF and the ss and tt timing libraries of the two PDK installs were compared and are byte-identical; the ff timing library and the cell Verilog model differ. The earlier statement of byte-identity was broader than the evidence.
+* The deck and the whitepaper were edited from their sources in `docs/src/` (recovered in this release, with their figures) and both PDFs were rebuilt; `docs/v2.0.2-errata.md` is the change record, finding by finding.
+* Not closed in v2.0.2: the equivalence, Tempus, CTS, IR, stock-against-modified, utilization, defect-history, re-extraction and frozen-evidence claims (findings 6, 7, 9, 11 to 15 and 17) and the Xcelium part of finding 2 are unchanged from v2.0.1 and have no released report in this repository.
+* `LICENSE` has one phrase corrected (the third-party licences are identified in `NOTICE` and reproduced in `LICENSES/`); the grant itself is unchanged.
 
 **v2.0.1.** The commercial build's size was given as 7,845 cells and 71,909 um2 of standard cells. Those are the figures of the synthesis netlist before placement. The routed block that was signed off has 8,273 cells and 75,681 um2 of standard cells, including the 176 clock-tree buffers added in layout; the transistor count, 87,237, was already taken from the routed layout. The open build's 122,928 um2 includes 3,919 um2 of tap cells, so the like-for-like comparison is 119,009 um2 against 75,681 um2. The README, whitepaper and deck now label each figure. No layout, netlist or check result changed.
 

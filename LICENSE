@@ -22,7 +22,7 @@ Copyright (c) 2026 Raisul Islam. All rights reserved, except as granted below.
    Publications, theses and teaching materials that use these files should cite this repository.
 
 5. Third-party components.
-   These components remain under their own licenses, which are reproduced in NOTICE:
+   These components remain under their own licenses, which are identified in NOTICE and reproduced in LICENSES/:
    - rtl/picorv32.v: ISC license, Copyright (C) 2015 Claire Xenia Wolf.
    - SkyWater SKY130 PDK and standard-cell data contained in the layout, netlists and models: Apache License 2.0, SkyWater Technology Foundry and Google LLC.
 
