@@ -1,0 +1,20 @@
+{
+ "purpose": "provenance of the released historical evidence files in this directory; created for release v2.0.2",
+ "common_note": "scrubbed copy: host/user/licence-server/path tokens replaced. Original sha256/size are of the unscrubbed historical files; they do not verify the published bytes (see published_sha256).",
+ "files": [
+  {
+   "published_name": "SHA256SUMS.original",
+   "source_relative_name": "picorv32_cadence_sky130/frozen/43902640.-5-1861513/SHA256SUMS",
+   "original_size_bytes": null,
+   "original_sha256": null,
+   "original_sha_note": "the manifest itself is not in the evidence inventory's file table; the published copy is the supplied file, unchanged",
+   "producer": "sha256sum (manifest written when the run was frozen)",
+   "run_id": "43902640",
+   "published_size_bytes": 817,
+   "published_sha256": "3b74d0e0927db751605ec29c6574a7f51f0b2a3ae56fb959fa7f5be780a667e2",
+   "source_lines": "all",
+   "transformations": [],
+   "note": "unchanged copy; no scrub replacements were needed (relative file names and hashes only)"
+  }
+ ]
+}

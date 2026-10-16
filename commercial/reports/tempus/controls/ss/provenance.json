@@ -1,0 +1,19 @@
+{
+ "purpose": "provenance of the released historical evidence files in this directory; created for release v2.0.2",
+ "common_note": "scrubbed copy: host/user/licence-server/path tokens replaced. Original sha256/size are of the unscrubbed historical files; they do not verify the published bytes (see published_sha256).",
+ "files": [
+  {
+   "published_name": "picorv32.tempus_drv_lib_control.rpt",
+   "source_relative_name": "picorv32_cadence_sky130/work/runs/43902642.-5-1418996/drv_ss/picorv32.tempus_drv_lib_control.rpt",
+   "original_size_bytes": 2103,
+   "original_sha256": "2682275fe3167aaca4c0a3e0d7f6f21e0ef776234b8f391d3dd0171f870a7295",
+   "producer": "Tempus 23.10-p001_1",
+   "run_id": "43902642",
+   "published_size_bytes": 2069,
+   "published_sha256": "a3e78f956730fb6c6142d941a9e30d8c21be0e3a5a516e8b50f2f09b832bd3cb",
+   "source_lines": "all",
+   "transformations": [],
+   "note": "scrubbed copy: host/user/licence-server/path tokens replaced"
+  }
+ ]
+}

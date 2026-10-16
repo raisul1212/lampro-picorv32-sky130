@@ -1,0 +1,31 @@
+{
+ "purpose": "provenance of the released historical evidence files in this directory; created for release v2.0.2",
+ "common_note": "scrubbed copy: host/user/licence-server/path tokens replaced. Original sha256/size are of the unscrubbed historical files; they do not verify the published bytes (see published_sha256).",
+ "files": [
+  {
+   "published_name": "README.md",
+   "generated_from": "the scrubbed power report",
+   "published_size_bytes": 1035,
+   "published_sha256": "71f4c55a577fe77a44f3f2379892479d1ce3692daad08911c80c074774698582",
+   "source_lines": "all",
+   "transformations": []
+  },
+  {
+   "published_name": "picorv32.rpt.gz",
+   "source_relative_name": "picorv32_cadence_sky130/frozen/voltus_ir_run7_43903863/reports/picorv32.rpt",
+   "original_size_bytes": 855993,
+   "original_sha256": "0b5ac0eae917a0b611407f7d42217634e942679b23363b80ec23057262ea01fc",
+   "producer": "Voltus 23.10-p001_1 (report_power)",
+   "run_id": "43903863",
+   "published_size_bytes": 121146,
+   "published_sha256": "3324a97f20ab470cfd99e863fa917e968e9a68bc55975b630960889a9bc8ab41",
+   "uncompressed_sha256": "ff9c9e6ad1de0624e19a29419f4cca5bb377501093f33ad1c7d28b0ecfac5890",
+   "uncompressed_size_bytes": 855841,
+   "source_lines": "all",
+   "transformations": [
+    "gzip-compressed (deterministic, mtime 0) for publication"
+   ],
+   "note": "scrubbed copy: host/user/licence-server/path tokens replaced"
+  }
+ ]
+}

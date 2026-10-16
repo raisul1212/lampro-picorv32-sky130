@@ -1,0 +1,164 @@
+                          CONFORMAL (R)
+                   Version 24.10-p100 (30-May-2024) (64 bit executable)
+   Copyright (c) Cadence Design Systems, Inc., 1997-2024. All Rights Reserved
+
+
+This program is proprietary and confidential information belonging to
+Cadence Design Systems, Inc., and may be used and disclosed only as authorized
+in a license agreement controlling such use and disclosure.
+
+// Warning: This version is 860 days old. You can download the latest version from http://downloads.cadence.com.
+
+0
+// Command: set_undefined_cell black_box -noascend -both
+0
+// Command: read_library -liberty -both {<DEPOT>
+// Parsing file <DEPOT> ...
+// Warning: (RTL9.17) Cell doesn't have any output pins or all output pins are undriven (blackboxed) (occurrence:12)
+// Note: (RTL9.26) Liberty pin with internal_node use default input_map (occurrence:6)
+// Note: Read Liberty library successfully
+0
+CPU time     : 0.34    seconds
+Elapse time  : 0       seconds
+Memory usage : 108.66  M bytes
+// Command: read_design -verilog95 -golden -lastmod -noelab {<DATA>/picorv32_cadence_sky130/work/runs/43902641.-5-1871961/fv/picorv32/fv_map.v.gz}
+// Parsing file <DATA>/picorv32_cadence_sky130/work/runs/43902641.-5-1871961/fv/picorv32/fv_map.v.gz ...
+0
+CPU time     : 0.51    seconds
+Elapse time  : 1       seconds
+Memory usage : 123.80  M bytes
+// Command: elaborate_design -golden -root {picorv32}
+// Golden root module is set to 'picorv32'
+// Warning: (RTL14) Signal has input but it has no output (occurrence:1)
+// Warning: (HRC3.10a) An input port is declared, but it is not completely used in the module (occurrence:100)
+0
+CPU time     : 0.62    seconds
+Elapse time  : 1       seconds
+Memory usage : 120.36  M bytes
+// Command: read_design -verilog95 -revised -lastmod -noelab {<DATA>/picorv32_cadence_sky130/work/runs/43902641.-5-1871961/inputs/picorv32_routed.v}
+// Parsing file <DATA>/picorv32_cadence_sky130/work/runs/43902641.-5-1871961/inputs/picorv32_routed.v ...
+0
+CPU time     : 0.81    seconds
+Elapse time  : 1       seconds
+Memory usage : 132.93  M bytes
+// Command: elaborate_design -revised -root {picorv32}
+// Revised root module is set to 'picorv32'
+// Note: (HRC3.5b) Open output port connection is detected (occurrence:106)
+// Warning: (HRC3.10a) An input port is declared, but it is not completely used in the module (occurrence:67)
+// Warning: (HRC3.16) A wire is declared, but not used in the module (occurrence:106)
+// Warning: Total black box modules referenced in Revised = 1
+0
+CPU time     : 0.93    seconds
+Elapse time  : 1       seconds
+Memory usage : 128.60  M bytes
+// Command: report_black_box
+SYSTEM: (R) sky130_fd_sc_hd__diode_2
+0
+// Command: set_flatten_model -seq_constant
+0
+// Command: set_flatten_model -seq_constant_x_to 0
+0
+// Command: set_system_mode lec
+// Processing Golden ...
+// Modeling Golden ...
+// Processing Revised ...
+// Modeling Revised ...
+// Balanced modeling (auto) mapped 3114 out of 3114 DFF/DLATs
+CPU time     : 1.22    seconds
+Elapse time  : 1       seconds
+Memory usage : 166.71  M bytes
+// Warning: Golden and Revised have different numbers of key points:
+// Golden  key points = 1966
+// Revised key points = 1967
+// Mapping key points ...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            102    307    1557      1966    
+--------------------------------------------------------------------------------
+Revised           102    307    1557      1966    
+================================================================================
+Unmapped points:
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   BBOX      Total   
+--------------------------------------------------------------------------------
+Unreachable       1         1       
+================================================================================
+0
+CPU time     : 1.35    seconds
+Elapse time  : 1       seconds
+Memory usage : 167.78  M bytes
+// Command: add_compared_points -all
+// 1864 compared points added to compare list
+0
+// Command: compare
+================================================================================
+Compared points      PO     DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           307    1557      1864    
+================================================================================
+0
+// Command: report_verification -verbose
+================================================================================
+                            Verification Report
+--------------------------------------------------------------------------------
+Category                                                                  Count
+--------------------------------------------------------------------------------
+1. Non-standard modeling options used:                                      0
+     Tri-stated output:                                        checked
+     Revised X signals set to E:                               yes
+     Floating signals tied to Z:                               yes
+     Command "add clock" for clock-gating:                     not used
+--------------------------------------------------------------------------------
+2. Incomplete verification:                                                 0
+     All primary outputs are mapped:                           yes
+     Not-mapped DFF/DLAT is detected:                          no
+     All mapped points are added as compare points:            yes
+     All compared points are compared:                         yes
+     User added black box:                                     no
+     Black box mapped with different module name:              no
+     Empty module is not black boxed:                          no
+     Command "add ignore outputs" used:                        no
+     Always false constraints detected:                        no
+--------------------------------------------------------------------------------
+3. User modification to design:                                             0
+     Change gate type:                                         no
+     Change wire:                                              no
+     Primary input added by user:                              no
+--------------------------------------------------------------------------------
+4. Conformal Constraint Designer clock domain crossing checks recommended:  0
+     Multiple clocks in the design:                            no
+--------------------------------------------------------------------------------
+5. Design ambiguity:                                                        0
+     Duplicate module definition:                              no
+     Black box due to undefined cells:                         no
+     Golden design has abnormal ratio of unreachable gates:    no
+     Ratio of golden unreachable gates:                        0%
+     Revised design has abnormal ratio of unreachable gates:   no
+     Ratio of revised unreachable gates:                       0%
+     All primary input bus ordering is consistent:             yes
+     All primary output bus ordering is consistent:            yes
+     DFF/DLAT not compared due to disabled clock port(s):        0
+     Always X compared point is detected:                      not checked
+--------------------------------------------------------------------------------
+6. Compare Results:                                                        PASS
+     Number of EQ compare points:                              1864
+     Number of NON-EQ compare points:                          0
+     Number of Aborted compare points:                         0
+     Number of Uncompared compare points :                     0
+================================================================================
+pass
+// Command: puts "No of compare points = [get_compare_points -count]"
+No of compare points = 1864
+// Command: puts "No of diff points    = [get_compare_points -NONequivalent -count]"
+No of diff points    = 0
+// Command: puts "No of abort points   = [get_compare_points -abort -count]"
+No of abort points   = 0
+// Command: puts "No of unknown points = [get_compare_points -unknown -count]"
+No of unknown points = 0
+// Command: vpxmode
+// Command: exit -f

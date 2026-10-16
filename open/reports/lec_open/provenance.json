@@ -1,0 +1,27 @@
+{
+ "purpose": "provenance of the released historical evidence files in this directory; created for release v2.0.2",
+ "common_note": "scrubbed copy: host/user/licence-server/path tokens replaced. Original sha256/size are of the unscrubbed historical files; they do not verify the published bytes (see published_sha256).",
+ "files": [
+  {
+   "published_name": "README.md",
+   "generated_from": "first_attempt.out",
+   "published_size_bytes": 697,
+   "published_sha256": "00af33a0977ef80fdc3791f2b50b5e07e14813933d756d08c8db30d99b42474c",
+   "source_lines": "all",
+   "transformations": []
+  },
+  {
+   "published_name": "first_attempt.out",
+   "source_relative_name": "open-lec-proof/run1/b1_open_rtl_to_synth.out",
+   "original_size_bytes": 2176,
+   "original_sha256": "1cfa03d91941cd0f45ecc08dcec432de37d85d73e13c35db83780a2718fef9e5",
+   "producer": "open logic-equivalence run (Yosys/ABC based), exit code 3",
+   "run_id": "b1 (8 October 2026)",
+   "published_size_bytes": 2127,
+   "published_sha256": "da4d5b33d3d88bd205625b97041f0e4909bff43615808cd3d238fbd99a2e76ba",
+   "source_lines": "all",
+   "transformations": [],
+   "note": "scrubbed copy: host/user/licence-server/path tokens replaced"
+  }
+ ]
+}

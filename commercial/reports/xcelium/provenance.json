@@ -1,0 +1,92 @@
+{
+ "purpose": "provenance of the released historical evidence files in this directory; created for release v2.0.2",
+ "common_note": "scrubbed copy: host/user/licence-server/path tokens replaced. Original sha256/size are of the unscrubbed historical files; they do not verify the published bytes (see published_sha256).",
+ "files": [
+  {
+   "published_name": "README.md",
+   "generated_from": "summary.json and the scrubbed logs",
+   "published_size_bytes": 2220,
+   "published_sha256": "78a892c189d6fea6345c0310e0c10201cbe8439be0ee47e04bbf6ac9ee117239",
+   "source_lines": "all",
+   "transformations": []
+  },
+  {
+   "published_name": "job.sh",
+   "source_relative_name": "picorv32_cadence_sky130/frozen/xcelium_gls_43903862/job.sh",
+   "original_size_bytes": 1170,
+   "original_sha256": "51ec3bddd027163e50987d6a0d72a5fbf75bf18219050985c41d317d63d0873e",
+   "producer": "shell (SLURM job script)",
+   "run_id": "43903862",
+   "published_size_bytes": 1018,
+   "published_sha256": "f606a67687bcf978df6ed536712e26fe1ec5d2e4e9947c0f914c9802409b82f6",
+   "source_lines": "all",
+   "transformations": [
+    "licence-server export line (line 3) removed",
+    "host/user/path tokens replaced"
+   ],
+   "note": "scrubbed copy: host/user/licence-server/path tokens replaced"
+  },
+  {
+   "published_name": "summary.json",
+   "generated_from": "xrun_8.25.log, xrun_10.log, xrun_4.log (scrubbed), parsed by the rule stated in the file",
+   "published_size_bytes": 1821,
+   "published_sha256": "4cfda1bef696baf64463232b8d182e94fdfb84cfb2eb666840930ba05d0f62bc",
+   "source_lines": "all",
+   "transformations": []
+  },
+  {
+   "published_name": "xrun_10.log.gz",
+   "source_relative_name": "picorv32_cadence_sky130/frozen/xcelium_gls_43903862/xrun_10.log",
+   "original_size_bytes": 369416,
+   "original_sha256": "2325f697b1233ce601b0710a87ab9f0f3eea29fe804175bc74e14aa987b26cf3",
+   "producer": "Xcelium 24.03-s011",
+   "run_id": "43903862",
+   "published_size_bytes": 8153,
+   "published_sha256": "d2f6ff9bee90feb62c6068cb371086aed926a384989ea48bccfc9d37d4861a69",
+   "uncompressed_sha256": "ec8f3f857e0fe2feb1ce22ae6755ec8d11fba93b401658a86a2020d5649718e8",
+   "uncompressed_size_bytes": 259072,
+   "source_lines": "all",
+   "transformations": [
+    "host/user/licence-server/path tokens replaced",
+    "gzip-compressed (deterministic, mtime 0) for publication"
+   ],
+   "note": "scrubbed copy: host/user/licence-server/path tokens replaced"
+  },
+  {
+   "published_name": "xrun_4.log.gz",
+   "source_relative_name": "picorv32_cadence_sky130/frozen/xcelium_gls_43903862/xrun_4.log",
+   "original_size_bytes": 395152,
+   "original_sha256": "b53e290db5449db1dcb4d48e83787296e7f585c75019e843cddb4eaa60d79b6d",
+   "producer": "Xcelium 24.03-s011",
+   "run_id": "43903862",
+   "published_size_bytes": 9780,
+   "published_sha256": "2a6c7d624b51d11114b69cdd8d00c9a6cd00c16f7c40335950845498138705b1",
+   "uncompressed_sha256": "11675f6fe55b9d04712425a43681c0a0a4173201e24ca23bc587c89a4d85887a",
+   "uncompressed_size_bytes": 277968,
+   "source_lines": "all",
+   "transformations": [
+    "host/user/licence-server/path tokens replaced",
+    "gzip-compressed (deterministic, mtime 0) for publication"
+   ],
+   "note": "scrubbed copy: host/user/licence-server/path tokens replaced"
+  },
+  {
+   "published_name": "xrun_8.25.log.gz",
+   "source_relative_name": "picorv32_cadence_sky130/frozen/xcelium_gls_43903862/xrun_8.25.log",
+   "original_size_bytes": 369475,
+   "original_sha256": "dc7fc95ec5ccd0602f4adb7cd2760ce675747c28508fb13fd3b4f1a5f4b7690a",
+   "producer": "Xcelium 24.03-s011",
+   "run_id": "43903862",
+   "published_size_bytes": 8167,
+   "published_sha256": "a9bd2ee1b912ca85528a283e3870b580b56b52affb34aa4b30699bdbd287472d",
+   "uncompressed_sha256": "ff903c877810f086491c42623653485872e83926c5eda2c8561ad5541be3ff9f",
+   "uncompressed_size_bytes": 259131,
+   "source_lines": "all",
+   "transformations": [
+    "host/user/licence-server/path tokens replaced",
+    "gzip-compressed (deterministic, mtime 0) for publication"
+   ],
+   "note": "scrubbed copy: host/user/licence-server/path tokens replaced"
+  }
+ ]
+}

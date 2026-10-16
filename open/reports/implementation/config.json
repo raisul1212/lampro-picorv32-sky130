@@ -1,0 +1,79 @@
+{
+ "DESIGN_NAME": "picorv32",
+ "VERILOG_FILES": "<WORK>/openlane/ll3/c1_p14/src/picorv32.v",
+ "CLOCK_PORT": "clk",
+ "CLOCK_NET": "clk",
+ "CLOCK_PERIOD": 8.25,
+ "FP_CORE_UTIL": 45,
+ "GPL_CELL_PADDING": 2,
+ "DPL_CELL_PADDING": 2,
+ "RUN_POST_CTS_RESIZER_TIMING": true,
+ "RUN_POST_GRT_RESIZER_TIMING": true,
+ "DESIGN_REPAIR_REMOVE_BUFFERS": true,
+ "RUN_ANTENNA_REPAIR": true,
+ "RUN_HEURISTIC_DIODE_INSERTION": false,
+ "DIODE_ON_PORTS": "both",
+ "GRT_ANTENNA_REPAIR_ITERS": 10,
+ "GRT_ANTENNA_REPAIR_MARGIN": 20,
+ "MAX_FANOUT_CONSTRAINT": 10,
+ "DEFAULT_CORNER": "max_ss_100C_1v60",
+ "SYNTH_STRATEGY": "DELAY 0",
+ "PL_TIMING_DRIVEN": true,
+ "EXTRA_EXCLUDED_CELLS": [
+  "sky130_fd_sc_hd__clkdlybuf4s*",
+  "sky130_fd_sc_hd__dlymetal*",
+  "sky130_fd_sc_hd__dlygate*"
+ ],
+ "SYNTH_ABC_BUFFERING": true,
+ "PL_RESIZER_FIX_HOLD_FIRST": true,
+ "GRT_RESIZER_FIX_HOLD_FIRST": true,
+ "PNR_SDC_FILE": "<WORK>/openroad-accept-019/inputs/picorv32_v101.sdc",
+ "SIGNOFF_SDC_FILE": "<WORK>/openroad-accept-019/inputs/picorv32_v101.sdc",
+ "CTS_DISTANCE_BETWEEN_BUFFERS": 100,
+ "INSERT_ECO_DIODES": [
+  {
+   "target": "_12967_/B2"
+  },
+  {
+   "target": "_12712_/A1"
+  }
+ ],
+ "meta": {
+  "version": 3,
+  "flow": [
+   "Odb.InsertECODiodes",
+   "OpenROAD.DetailedRouting",
+   "OpenROAD.RepairPostDRT",
+   "Odb.RemoveRoutingObstructions",
+   "OpenROAD.CheckAntennas",
+   "Checker.TrDRC",
+   "Odb.ReportDisconnectedPins",
+   "Checker.DisconnectedPins",
+   "Odb.ReportWireLength",
+   "Checker.WireLength",
+   "OpenROAD.FillInsertion",
+   "Odb.CellFrequencyTables",
+   "OpenROAD.RCX",
+   "OpenROAD.STAPostPNR",
+   "OpenROAD.IRDropReport",
+   "Magic.StreamOut",
+   "KLayout.StreamOut",
+   "Magic.WriteLEF",
+   "Odb.CheckDesignAntennaProperties",
+   "KLayout.XOR",
+   "Checker.XOR",
+   "Magic.DRC",
+   "KLayout.DRC",
+   "Checker.MagicDRC",
+   "Checker.KLayoutDRC",
+   "Magic.SpiceExtraction",
+   "Checker.IllegalOverlap",
+   "Netgen.LVS",
+   "Checker.LVS",
+   "Checker.SetupViolations",
+   "Checker.HoldViolations",
+   "Checker.MaxSlewViolations",
+   "Checker.MaxCapViolations"
+  ]
+ }
+}

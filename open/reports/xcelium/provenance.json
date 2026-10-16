@@ -1,0 +1,76 @@
+{
+ "purpose": "provenance of the released historical evidence files in this directory; created for release v2.0.2",
+ "common_note": "scrubbed copy: host/user/licence-server/path tokens replaced. Original sha256/size are of the unscrubbed historical files; they do not verify the published bytes (see published_sha256).",
+ "files": [
+  {
+   "published_name": "README.md",
+   "generated_from": "summary.json and the scrubbed logs",
+   "published_size_bytes": 1976,
+   "published_sha256": "bf3aee77714da04607d2154a2a8aa8cf37883da487357549b622cbdbb59a170d",
+   "source_lines": "all",
+   "transformations": []
+  },
+  {
+   "published_name": "summary.json",
+   "generated_from": "xrun_8.25.log, xrun_10.log, xrun_4.log (scrubbed), parsed by the rule stated in the file",
+   "published_size_bytes": 1758,
+   "published_sha256": "2af6168c1e9a2642a7560e07d08cfdf40960d870b755f4c15677d99804ab8456",
+   "source_lines": "all",
+   "transformations": []
+  },
+  {
+   "published_name": "xrun_10.log.gz",
+   "source_relative_name": "picorv32_open_sky130/frozen/xcelium_gls_open_u45_44019555/xrun_10.log",
+   "original_size_bytes": 885543,
+   "original_sha256": "3e74b52440083e877e13cfffff61b5ce096256e8551d375fd4fe5a6fe1461c11",
+   "producer": "Xcelium 24.03-s011",
+   "run_id": "44019555",
+   "published_size_bytes": 19009,
+   "published_sha256": "89c81255d20f5c475aa91cdbe402b301d04fb612a5447aaa7483dd7a4ac75002",
+   "uncompressed_sha256": "3ebc4c5f67b068f0cdcce01aa40b9bb6f22e469abe9c446a60c4218c4720e7f9",
+   "uncompressed_size_bytes": 565619,
+   "source_lines": "all",
+   "transformations": [
+    "host/user/licence-server/path tokens replaced",
+    "gzip-compressed (deterministic, mtime 0) for publication"
+   ],
+   "note": "scrubbed copy: host/user/licence-server/path tokens replaced"
+  },
+  {
+   "published_name": "xrun_4.log.gz",
+   "source_relative_name": "picorv32_open_sky130/frozen/xcelium_gls_open_u45_44019555/xrun_4.log",
+   "original_size_bytes": 886271,
+   "original_sha256": "fe38dc92d9ff154c2d58837885fae42f5f3562bb69676d7940b3d210ae433f5c",
+   "producer": "Xcelium 24.03-s011",
+   "run_id": "44019555",
+   "published_size_bytes": 19224,
+   "published_sha256": "e0d2722239f9e97c257cad36531a6c86b5d80e5fdc0eb1de6848a1b6bb96664c",
+   "uncompressed_sha256": "70788b24db58c4c3a3333781fdfaedddb3fad380a4ee56616d2bd91dc6ea0bc4",
+   "uncompressed_size_bytes": 566167,
+   "source_lines": "all",
+   "transformations": [
+    "host/user/licence-server/path tokens replaced",
+    "gzip-compressed (deterministic, mtime 0) for publication"
+   ],
+   "note": "scrubbed copy: host/user/licence-server/path tokens replaced"
+  },
+  {
+   "published_name": "xrun_8.25.log.gz",
+   "source_relative_name": "picorv32_open_sky130/frozen/xcelium_gls_open_u45_44019555/xrun_8.25.log",
+   "original_size_bytes": 885602,
+   "original_sha256": "50ea69d564f63dfec0c003049ec70af6e4d110b8d953c9848f38bf6db6a32db2",
+   "producer": "Xcelium 24.03-s011",
+   "run_id": "44019555",
+   "published_size_bytes": 19027,
+   "published_sha256": "154b3f7277270e23cdc441827163eabf61fe88a357f34949f6b472395a98f72c",
+   "uncompressed_sha256": "97e330eceaed917576ba5838791fd5735f723ab4ca9d952eb50cd84baed5c010",
+   "uncompressed_size_bytes": 565678,
+   "source_lines": "all",
+   "transformations": [
+    "host/user/licence-server/path tokens replaced",
+    "gzip-compressed (deterministic, mtime 0) for publication"
+   ],
+   "note": "scrubbed copy: host/user/licence-server/path tokens replaced"
+  }
+ ]
+}

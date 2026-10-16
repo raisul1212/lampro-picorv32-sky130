@@ -1,0 +1,56 @@
+{
+ "purpose": "provenance of the released historical evidence files in this directory; created for release v2.0.2",
+ "common_note": "scrubbed copy: host/user/licence-server/path tokens replaced. Original sha256/size are of the unscrubbed historical files; they do not verify the published bytes (see published_sha256).",
+ "files": [
+  {
+   "published_name": "README.md",
+   "generated_from": "the logs and setup-summary.txt",
+   "published_size_bytes": 1659,
+   "published_sha256": "e095117b77f5dbdd30827424d458fda6e7f0cc212f69bd43cb7ba4aaeadaa517",
+   "source_lines": "all",
+   "transformations": []
+  },
+  {
+   "published_name": "rtl_to_synth.log",
+   "source_relative_name": "picorv32_open_sky130/frozen/lec_conformal_43978613/rtl2synth/DIR_fsm_setup.log",
+   "original_size_bytes": 10933,
+   "original_sha256": "ad4857d713bbeb9807cb00f07bd01df233fa3a8873149520f10e26b60eb1f4fe",
+   "producer": "Conformal 24.10-p100",
+   "run_id": "43978613",
+   "published_size_bytes": 10581,
+   "published_sha256": "828dec0d931f11fb1eb41c8ac88baeb4f9ed088782ff4c9a90b20aa1d600956f",
+   "source_lines": "all",
+   "transformations": [],
+   "note": "scrubbed copy: host/user/licence-server/path tokens replaced"
+  },
+  {
+   "published_name": "setup-summary.txt",
+   "source_relative_name": "picorv32_open_sky130/frozen/lec_conformal_43978613/README.txt",
+   "original_size_bytes": 1019,
+   "original_sha256": "fbb38bc3f439975625b8d361eb6d9a1bdc2691126fb196af6aa8d5ebf1083fd0",
+   "producer": "Conformal 24.10 (setup record)",
+   "run_id": "43978613",
+   "published_size_bytes": 1011,
+   "published_sha256": "c8c35511e4ab19e340e53dbc1635eec69594dc173ef506d7b239b8079c9f9092",
+   "source_lines": "all",
+   "transformations": [
+    "agent attribution removed from line 1 (the parenthesis keeps only the date 2026-10-09)",
+    "host/user/licence-server/path tokens replaced"
+   ],
+   "note": "scrubbed copy: host/user/licence-server/path tokens replaced; agent names redacted"
+  },
+  {
+   "published_name": "synth_to_routed.log",
+   "source_relative_name": "picorv32_open_sky130/frozen/lec_conformal_43978613/synth2routed/lec_routed.log",
+   "original_size_bytes": 9453,
+   "original_sha256": "56ba9dacc42ef557f5ad320de48967dea04117b476c97e458498ff94b82571d6",
+   "producer": "Conformal 24.10-p100",
+   "run_id": "43978613",
+   "published_size_bytes": 9202,
+   "published_sha256": "20d9f27e376950505332e47c1f994f2c85b57db440d0ecdf0390943c51a1b046",
+   "source_lines": "all",
+   "transformations": [],
+   "note": "scrubbed copy: host/user/licence-server/path tokens replaced"
+  }
+ ]
+}

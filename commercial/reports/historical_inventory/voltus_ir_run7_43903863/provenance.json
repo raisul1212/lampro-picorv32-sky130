@@ -1,0 +1,20 @@
+{
+ "purpose": "provenance of the released historical evidence files in this directory; created for release v2.0.2",
+ "common_note": "scrubbed copy: host/user/licence-server/path tokens replaced. Original sha256/size are of the unscrubbed historical files; they do not verify the published bytes (see published_sha256).",
+ "files": [
+  {
+   "published_name": "SHA256SUMS.original",
+   "source_relative_name": "picorv32_cadence_sky130/frozen/voltus_ir_run7_43903863/SHA256SUMS",
+   "original_size_bytes": null,
+   "original_sha256": null,
+   "original_sha_note": "the manifest itself is not in the evidence inventory's file table; the published copy is the supplied file, unchanged",
+   "producer": "sha256sum (manifest written when the run was frozen)",
+   "run_id": "voltus_ir_run7_43903863",
+   "published_size_bytes": 922,
+   "published_sha256": "1a6c21a6a57ab40d780ad12e30a0e395baf8b61c3bf27371f6034b94b2901f62",
+   "source_lines": "all",
+   "transformations": [],
+   "note": "unchanged copy; no scrub replacements were needed (relative file names and hashes only)"
+  }
+ ]
+}

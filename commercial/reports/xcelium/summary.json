@@ -1,0 +1,49 @@
+{
+ "package": "commercial",
+ "tool": "Xcelium 24.03-s011",
+ "run_id": "43903862",
+ "kind": "historical run (7/9 October 2026), scrubbed logs; not a new run",
+ "counting_rule": "timing_violation_blocks counts the diagnostic blocks that begin with the line 'Warning!  Timing violation' in the tool log",
+ "options_from_log": "-neg_tchk -sdf_verbose, +period=<ns>",
+ "periods": [
+  {
+   "period_ns": 8.25,
+   "verdict": "PASS",
+   "result": "RESULT 55",
+   "timing_violation_blocks": 0,
+   "log": "xrun_8.25.log.gz"
+  },
+  {
+   "period_ns": 10.0,
+   "verdict": "PASS",
+   "result": "RESULT 55",
+   "timing_violation_blocks": 0,
+   "log": "xrun_10.log.gz"
+  },
+  {
+   "period_ns": 4.0,
+   "verdict": "FAIL",
+   "result": "RESULT timeout",
+   "timing_violation_blocks": 76,
+   "log": "xrun_4.log.gz"
+  }
+ ],
+ "sdf_annotation_table_per_log": {
+  "pathdelays_total": 50696,
+  "pathdelays_annotated": 50696,
+  "tchecks_total": 6228,
+  "tchecks_annotated": 6228,
+  "width_total": 3114,
+  "width_annotated": 3114,
+  "setuphold_total": 3114,
+  "setuphold_annotated": 3114,
+  "percent_annotated": 100.0
+ },
+ "wrapper_job_output": "job_43903862.out is not published: its 'timing-check violations' lines read 2, 2 and 154 because the grep also matches annotation-table lines; the diagnostic blocks number 0, 0 and 76",
+ "input_identities_recorded_by_the_job": {
+  "picorv32.sdf": "0c5f54b584c47e420dfb3e31e32a5b4240a2dafdfb2e695ea9494b4f0e28b42e",
+  "picorv32.powered.v": "5a53364c87925ec235eb632ea21c6e529292d20d47970dcd13a48d3e0232ded4",
+  "tb_picorv32_golden.v": "418413b4d58f681fd098765965488d9c53af82f2c8817591ef2ec30bebc4cff2",
+  "note": "These are not byte-identical to the shipped timing/picorv32.sdf, timing/picorv32.sim.sdf, netlist/picorv32.sim.v or sim/tb_picorv32_golden.v of the commercial package (see README.md)."
+ }
+}

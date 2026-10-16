@@ -1,0 +1,40 @@
+{
+ "purpose": "provenance of the released historical evidence files in this directory; created for release v2.0.2",
+ "common_note": "scrubbed copy: host/user/licence-server/path tokens replaced. Original sha256/size are of the unscrubbed historical files; they do not verify the published bytes (see published_sha256).",
+ "files": [
+  {
+   "published_name": "README.md",
+   "generated_from": "job-44019556.out",
+   "published_size_bytes": 1231,
+   "published_sha256": "d6cb4ee3b9eb79db924763a2edd273cc4bb8c9a8d60e919255a51bb1c0041705",
+   "source_lines": "all",
+   "transformations": []
+  },
+  {
+   "published_name": "job-44019556.out",
+   "source_relative_name": "picorv32_open_sky130/frozen/ir_psm018_u45eco2_44019556/run/job-44019556.out",
+   "original_size_bytes": 2852,
+   "original_sha256": "1354cbd63a0e90ea394267c7a083f9a810fdcd1a8c0d3a30e402fd2b0bf3cef1",
+   "producer": "OpenROAD PSM (patched OpenROAD image 018)",
+   "run_id": "44019556",
+   "published_size_bytes": 2723,
+   "published_sha256": "c916bb7eff8a858255c20c4c1cc70de8d6f242bdb423829240605aaf9ba6f809",
+   "source_lines": "all",
+   "transformations": [],
+   "note": "scrubbed copy: host/user/licence-server/path tokens replaced"
+  },
+  {
+   "published_name": "job.sh",
+   "source_relative_name": "picorv32_open_sky130/frozen/ir_psm018_u45eco2_44019556/run/job.sh",
+   "original_size_bytes": 1480,
+   "original_sha256": "2ce6a51fbdbbc4eae0460a60f548642fb13106eb9bbc3ae41005218ae452c51c",
+   "producer": "shell (SLURM job script, apptainer + OpenROAD)",
+   "run_id": "44019556",
+   "published_size_bytes": 1248,
+   "published_sha256": "ea16453cdaf9a2f9b44750392cad30b7d455b3324dfdc19f255797ce0d351545",
+   "source_lines": "all",
+   "transformations": [],
+   "note": "scrubbed copy: host/user/licence-server/path tokens replaced"
+  }
+ ]
+}

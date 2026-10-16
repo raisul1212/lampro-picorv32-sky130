@@ -1,0 +1,23 @@
+RCX_RC=0
+-rw-rw-r-- 1 <USER> <USER>-apps 10188646 Oct  7 23:39 picorv32.max.spef
+-rw-rw-r-- 1 <USER> <USER>-apps  9966362 Oct  7 23:39 picorv32.min.spef
+-rw-rw-r-- 1 <USER> <USER>-apps 10055646 Oct  7 23:39 picorv32.nom.spef
+RESULT ss_100C_1v60 innovus
+worst slack max 0.28
+worst slack min 0.71
+RESULT ss_100C_1v60 rcx_nom
+worst slack max 0.55
+worst slack min 0.70
+RESULT ss_100C_1v60 rcx_max
+worst slack max 0.34
+worst slack min 0.71
+RESULT ff_n40C_1v95 innovus
+worst slack max 2.96
+worst slack min 0.03
+RESULT ff_n40C_1v95 rcx_nom
+worst slack max 3.02
+worst slack min 0.03
+RESULT ff_n40C_1v95 rcx_min
+worst slack max 3.07
+worst slack min 0.03
+DONE

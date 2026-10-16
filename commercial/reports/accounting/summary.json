@@ -1,0 +1,25 @@
+{
+ "cluster_jobs": {
+  "rows": 62,
+  "total_elapsed_seconds": 18499,
+  "total_elapsed_hours": 5.138611,
+  "meaning": "sum of per-job elapsed (wall-clock) time; not CPU-hours and not the elapsed duration of the project",
+  "states": {
+   "COMPLETED": 53,
+   "FAILED": 9
+  }
+ },
+ "one_pass_jobs": {
+  "job_ids": "43892550-43892556",
+  "count": 7,
+  "summed_elapsed_seconds": 2255,
+  "summed_elapsed": "37 min 35 s",
+  "first_start_to_last_finish_seconds": 2576,
+  "first_start_to_last_finish": "42 min 56 s"
+ },
+ "usage_window": {
+  "start_utc": "2026-10-01T04:00:00",
+  "end_utc": "2026-10-07T20:15:04",
+  "end_edt": "2026-10-07 16:15:04"
+ }
+}

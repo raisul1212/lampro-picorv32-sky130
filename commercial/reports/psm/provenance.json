@@ -1,0 +1,49 @@
+{
+ "purpose": "provenance of the released historical evidence files in this directory; created for release v2.0.2",
+ "common_note": "scrubbed copy: host/user/licence-server/path tokens replaced. Original sha256/size are of the unscrubbed historical files; they do not verify the published bytes (see published_sha256).",
+ "files": [
+  {
+   "published_name": "README.md",
+   "generated_from": "the two excerpts",
+   "published_size_bytes": 762,
+   "published_sha256": "1ad942115a5a7171953c04f8b9d1917336c3613be040f65cbbfc95ed178d1e90",
+   "source_lines": "all",
+   "transformations": []
+  },
+  {
+   "published_name": "route_n-comparison.md",
+   "source_relative_name": "picorv32_open_sky130/frozen/ir_psm018_eco3b_44009840/RESULTS.md",
+   "original_size_bytes": 4232,
+   "original_sha256": "d22c3bd5c324d8c69e84841f7283ff7b75612392ea8c1dd7156c96fb881f7090",
+   "producer": "OpenROAD PSM (patched, image 018) and Voltus values quoted in the record",
+   "run_id": "44009840 (record), probe job 43937397",
+   "published_size_bytes": 1220,
+   "published_sha256": "bdfe7160a9c3907ee65bb567ae9e07c6d339881af06368ed22679786bbc4120c",
+   "source_lines": "2 and 4-13 (section 1, with edits)",
+   "transformations": [
+    "excerpt",
+    "first-person wording and the reference to another party's script and claim removed",
+    "column of another party's claimed values removed",
+    "closing agreement/difference narrative removed",
+    "paths replaced"
+   ],
+   "note": "scrubbed copy: host/user/licence-server/path tokens replaced; agent names redacted"
+  },
+  {
+   "published_name": "source-placement.md",
+   "source_relative_name": "open-ir-proof/RESULTS.md",
+   "original_size_bytes": 1313,
+   "original_sha256": "98b29c896b3e7b2dc323014b1535ad81039622ff60b6d2dae4f4dfa9d410ad6e",
+   "producer": "OpenROAD PSM (stock image, OpenROAD dcf36133)",
+   "run_id": "record of 8 October 2026",
+   "published_size_bytes": 1214,
+   "published_sha256": "90181bbae29ed2207a054a2eb2310323238d74e572d4b8ab7cc310db2ab12105",
+   "source_lines": "2 to 7 and 12",
+   "transformations": [
+    "excerpt",
+    "title line (software identity of the adapter) and rows for other layouts removed"
+   ],
+   "note": "no scrub replacements were needed; no agent names present"
+  }
+ ]
+}

@@ -1,0 +1,56 @@
+{
+ "purpose": "provenance of the released historical evidence files in this directory; created for release v2.0.2",
+ "common_note": "scrubbed copy: host/user/licence-server/path tokens replaced. Original sha256/size are of the unscrubbed historical files; they do not verify the published bytes (see published_sha256).",
+ "files": [
+  {
+   "published_name": "README.md",
+   "generated_from": "the datasets in this directory",
+   "published_size_bytes": 159,
+   "published_sha256": "d5cccf8c0975329ee554358be432af36d19135e1d08ab3a5c95cb8ccd7759a5d",
+   "source_lines": "all",
+   "transformations": []
+  },
+  {
+   "published_name": "cluster_jobs.psv",
+   "source_relative_name": "picorv32_cadence_sky130/frozen/agentic_cost_and_counts_2026-10-07/cluster_jobs.psv",
+   "original_size_bytes": 4841,
+   "original_sha256": "9e53a93ae5fdc8a26cb271d2de95899ddf2f50ddf167125ad691b44b0902a11e",
+   "producer": "sacct (scheduler accounting)",
+   "run_id": "62 jobs, 1-7 October 2026",
+   "published_size_bytes": 4841,
+   "published_sha256": "9e53a93ae5fdc8a26cb271d2de95899ddf2f50ddf167125ad691b44b0902a11e",
+   "source_lines": "all",
+   "transformations": [],
+   "note": "copied byte for byte (no scrub replacements were needed)"
+  },
+  {
+   "published_name": "counts.json",
+   "source_relative_name": "picorv32_cadence_sky130/frozen/agentic_cost_and_counts_2026-10-07/agentic_cost.json",
+   "original_size_bytes": 335,
+   "original_sha256": "49b48138850fa9ef704393004e5047bcd49220780818217670df8d630049243d",
+   "producer": "usage-accounting extractor",
+   "run_id": "window 2026-10-01 to 2026-10-07",
+   "published_size_bytes": 335,
+   "published_sha256": "49b48138850fa9ef704393004e5047bcd49220780818217670df8d630049243d",
+   "source_lines": "all",
+   "transformations": [],
+   "note": "copied byte for byte (no scrub replacements were needed); it holds counts only, no conversation text"
+  },
+  {
+   "published_name": "method.md",
+   "generated_from": "counts.json and cluster_jobs.psv",
+   "published_size_bytes": 1602,
+   "published_sha256": "6188f99d2b378993e71f37644f1ffc3666df8f2c6e8d3e60e821da2e5caf8c1d",
+   "source_lines": "all",
+   "transformations": []
+  },
+  {
+   "published_name": "summary.json",
+   "generated_from": "cluster_jobs.psv and counts.json, recomputed here",
+   "published_size_bytes": 643,
+   "published_sha256": "833297257b3b9d3e282aca9ec291420474c4bcd74c5e30744f073ecca03bfe26",
+   "source_lines": "all",
+   "transformations": []
+  }
+ ]
+}

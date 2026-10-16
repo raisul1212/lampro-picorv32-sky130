@@ -1,0 +1,34 @@
+{
+ "purpose": "provenance of the released historical evidence files in this directory; created for release v2.0.2",
+ "common_note": "scrubbed copy: host/user/licence-server/path tokens replaced. Original sha256/size are of the unscrubbed historical files; they do not verify the published bytes (see published_sha256).",
+ "files": [
+  {
+   "published_name": "hold.rpt.gz",
+   "source_relative_name": "picorv32_cadence_sky130/work/runs/43902642.-5-1418996/post_tt/picorv32.tempus_hold.rpt.gz",
+   "original_size_bytes": 2689459,
+   "original_sha256": "74c092ed8c0b44dda1f24704360a975a04924923fe61a5fef5aed01e9c5f1fdb",
+   "producer": "Tempus 23.10-p001_1",
+   "run_id": "43902642",
+   "published_size_bytes": 136881,
+   "published_sha256": "bf820398eebbd42d1ef5fceb9251f0f62efce4ce21ab863bd4b6d6bc121d7896",
+   "source_lines": "all",
+   "transformations": [],
+   "note": "scrubbed copy: host/user/licence-server/path tokens replaced; published as the scrubbed report compressed with gzip; original size/sha256 are of the uncompressed report",
+   "uncompressed_sha256": "10764947be0a4bb62bcbbf6a4b7ae4bc249eff5b6fcce8d102d67371bb6b371d",
+   "uncompressed_size_bytes": 2689425
+  },
+  {
+   "published_name": "setup.rpt",
+   "source_relative_name": "picorv32_cadence_sky130/work/runs/43902642.-5-1418996/post_tt/picorv32.tempus_worst.rpt",
+   "original_size_bytes": 3122,
+   "original_sha256": "12bc9a24a18ba27672c3d8104ceba61963373988191abd51fe7a8c51522af72e",
+   "producer": "Tempus 23.10-p001_1",
+   "run_id": "43902642",
+   "published_size_bytes": 3088,
+   "published_sha256": "27886d1a4a0f57b3e3b81206c66748bb5d797e9b40bc6a6a0756b98498fef4da",
+   "source_lines": "all",
+   "transformations": [],
+   "note": "scrubbed copy: host/user/licence-server/path tokens replaced"
+  }
+ ]
+}

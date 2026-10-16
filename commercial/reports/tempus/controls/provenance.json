@@ -1,0 +1,29 @@
+{
+ "purpose": "provenance of the released historical evidence files in this directory; created for release v2.0.2",
+ "common_note": "scrubbed copy: host/user/licence-server/path tokens replaced. Original sha256/size are of the unscrubbed historical files; they do not verify the published bytes (see published_sha256).",
+ "files": [
+  {
+   "published_name": "README.md",
+   "generated_from": "the ss library-control report and ledger rows D-220..D-222",
+   "published_size_bytes": 1262,
+   "published_sha256": "338e9955c47bbcaa9421629a07f7028d68c4b06a22dd34218e86cd81638059ab",
+   "source_lines": "all",
+   "transformations": []
+  },
+  {
+   "published_name": "ledger-excerpt.md",
+   "generated_from": "rows D-220..D-222 of the commercial ledger",
+   "published_size_bytes": 4300,
+   "published_sha256": "023b523df94a12a5ebb67eb2eb33a7d0b0dac9a20aa0289a9490e3dd60407779",
+   "source_lines": "table rows D-220..D-222",
+   "transformations": [
+    "row selection; columns role, filer, model, timestamp dropped",
+    "cluster paths replaced by <DEPOT>"
+   ],
+   "note": "excerpt of a registrar ledger; technical fields only",
+   "source_relative_name": "picorv32_cadence_sky130/LEDGER.md",
+   "original_size_bytes": 162148,
+   "original_sha256": "e845b90396e0871740180abc5fe5e09c1ba33561d7c36620fd2fc59467ce7c27"
+  }
+ ]
+}

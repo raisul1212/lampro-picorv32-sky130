@@ -1,0 +1,14 @@
+{
+ "purpose": "provenance of the released historical evidence files in this directory; created for release v2.0.2",
+ "common_note": "scrubbed copy: host/user/licence-server/path tokens replaced. Original sha256/size are of the unscrubbed historical files; they do not verify the published bytes (see published_sha256).",
+ "files": [
+  {
+   "published_name": "final-diode-count.json",
+   "generated_from": "open/layout/picorv32.def (shipped)",
+   "published_size_bytes": 447,
+   "published_sha256": "1d0cd5e75cdab7e470a26cdd8fa9aea279a94d002f0404d8561d8456e1391cf6",
+   "source_lines": "all",
+   "transformations": []
+  }
+ ]
+}

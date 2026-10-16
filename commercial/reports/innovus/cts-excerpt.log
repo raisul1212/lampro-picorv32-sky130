@@ -1,0 +1,99 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2025 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+
+Version:	v25.11-s102_1, built Wed Aug 27 13:03:08 PDT 2025
+
+[... lines 6 to 6425 of the original log omitted ...]
+
+  Clock DAG stats PRO initial state:
+    cell counts      : b=176, i=0, icg=0, dcg=0, l=0, total=176
+    sink counts      : regular=1557, enable_latch=0, load_capacitance=0, antenna=0, node_sink=0, port=0, total=1557
+    misc counts      : r=1, pp=0, mci=0
+    cell areas       : b=1542.730um^2, i=0.000um^2, icg=0.000um^2, dcg=0.000um^2, l=0.000um^2, total=1542.730um^2
+    cell capacitance : b=0.460pF, i=0.000pF, icg=0.000pF, dcg=0.000pF, l=0.000pF, total=0.460pF
+    sink capacitance : total=2.676pF, avg=0.002pF, sd=0.000pF, min=0.002pF, max=0.002pF
+    wire capacitance : top=0.000pF, trunk=0.601pF, leaf=1.519pF, total=2.121pF
+    wire lengths     : top=0.000um, trunk=3591.690um, leaf=8467.060um, total=12058.750um
+    hp wire lengths  : top=0.000um, trunk=3011.710um, leaf=5360.380um, total=8372.090um
+  Clock DAG net violations PRO initial state: none
+  Clock DAG primary half-corner transition distribution PRO initial state:
+    Trunk : target=0.425ns count=21 avg=0.142ns sd=0.039ns min=0.005ns max=0.195ns {21 <= 0.255ns, 0 <= 0.340ns, 0 <= 0.383ns, 0 <= 0.404ns, 0 <= 0.425ns}
+    Leaf  : target=0.425ns count=156 avg=0.149ns sd=0.014ns min=0.099ns max=0.192ns {156 <= 0.255ns, 0 <= 0.340ns, 0 <= 0.383ns, 0 <= 0.404ns, 0 <= 0.425ns}
+  Clock DAG library cell distribution PRO initial state {count}:
+     Bufs: sky130_fd_sc_hd__clkbuf_16: 3 sky130_fd_sc_hd__clkbuf_8: 27 sky130_fd_sc_hd__clkbuf_4: 146 
+  Primary reporting skew groups PRO initial state:
+  Skew group summary PRO initial state:
+    skew_group clk/cm_func: insertion delay [min=0.862, max=0.963, avg=0.916, sd=0.022, skn=-0.401, kur=-0.584], skew [0.101 vs 0.352], 100% {0.862, 0.963} (wid=0.010 ws=0.007) (gid=0.960 gs=0.104)
+  Recomputing CTS skew targets...
+  Resolving skew group constraints...
+    Solving LP: 1 skew groups; 2 fragments, 2 fraglets and 3 vertices; 12 variables and 27 constraints; tolerance 1
+  Resolving skew group constraints done.
+  Recomputing CTS skew targets done. (took cpu=0:00:00.1 real=0:00:00.1)
+  PRO Fixing DRVs...
+    Fixing clock tree DRVs: ...20% ...40% ...60% ...80% ...100% 
+    CCOpt-PRO: considered: 177, tested: 177, violation detected: 0, violation ignored (due to small violation): 0, cannot run: 0, attempted: 0, unsuccessful: 0, sized: 0
+    
+    Statistics: Fix DRVs (cell sizing):
+    ===================================
+    
+    Cell changes by Net Type:
+    
+    -------------------------------------------------------------------------------------------------
+    Net Type    Attempted    Upsized     Downsized    Swapped Same Size    Total Changed    Not Sized
+    -------------------------------------------------------------------------------------------------
+    top                0            0           0            0                    0                0
+    trunk              0            0           0            0                    0                0
+    leaf               0            0           0            0                    0                0
+    -------------------------------------------------------------------------------------------------
+    Total              0            0           0            0                    0                0
+    -------------------------------------------------------------------------------------------------
+    
+    Upsized: 0, Downsized: 0, Sized but same area: 0, Unchanged: 0, Area change: 0.000um^2 (0.000%)
+    Max. move: 0.000um, Min. move: 0.000um, Avg. move: N/A
+    
+    Clock DAG stats after 'PRO Fixing DRVs':
+      cell counts      : b=176, i=0, icg=0, dcg=0, l=0, total=176
+      sink counts      : regular=1557, enable_latch=0, load_capacitance=0, antenna=0, node_sink=0, port=0, total=1557
+      misc counts      : r=1, pp=0, mci=0
+      cell areas       : b=1542.730um^2, i=0.000um^2, icg=0.000um^2, dcg=0.000um^2, l=0.000um^2, total=1542.730um^2
+      cell capacitance : b=0.460pF, i=0.000pF, icg=0.000pF, dcg=0.000pF, l=0.000pF, total=0.460pF
+      sink capacitance : total=2.676pF, avg=0.002pF, sd=0.000pF, min=0.002pF, max=0.002pF
+      wire capacitance : top=0.000pF, trunk=0.601pF, leaf=1.519pF, total=2.121pF
+      wire lengths     : top=0.000um, trunk=3591.690um, leaf=8467.060um, total=12058.750um
+      hp wire lengths  : top=0.000um, trunk=3011.710um, leaf=5360.380um, total=8372.090um
+    Clock DAG net violations after 'PRO Fixing DRVs': none
+    Clock DAG primary half-corner transition distribution after 'PRO Fixing DRVs':
+      Trunk : target=0.425ns count=21 avg=0.142ns sd=0.039ns min=0.005ns max=0.195ns {21 <= 0.255ns, 0 <= 0.340ns, 0 <= 0.383ns, 0 <= 0.404ns, 0 <= 0.425ns}
+      Leaf  : target=0.425ns count=156 avg=0.149ns sd=0.014ns min=0.099ns max=0.192ns {156 <= 0.255ns, 0 <= 0.340ns, 0 <= 0.383ns, 0 <= 0.404ns, 0 <= 0.425ns}
+    Clock DAG library cell distribution after 'PRO Fixing DRVs' {count}:
+       Bufs: sky130_fd_sc_hd__clkbuf_16: 3 sky130_fd_sc_hd__clkbuf_8: 27 sky130_fd_sc_hd__clkbuf_4: 146 
+    Primary reporting skew groups after 'PRO Fixing DRVs':
+    Skew group summary after 'PRO Fixing DRVs':
+      skew_group clk/cm_func: insertion delay [min=0.862, max=0.963], skew [0.101 vs 0.352]
+    Legalizer API calls during this step: 0 succeeded with high effort: 0 succeeded with medium effort: 0 succeeded with low effort: 0 succeeded with basic effort: 0 succeeded with basic unbounded effort: 0
+  PRO Fixing DRVs done. (took cpu=0:00:00.0 real=0:00:00.0)
+  Reconnecting optimized routes...
+  Reconnecting optimized routes done. (took cpu=0:00:00.0 real=0:00:00.0)
+  Clock tree timing engine global stage delay update for dc_ss:both.late...
+  Clock tree timing engine global stage delay update for dc_ss:both.late done. (took cpu=0:00:00.0 real=0:00:00.0)
+  Clock DAG stats PRO final:
+    cell counts      : b=176, i=0, icg=0, dcg=0, l=0, total=176
+    sink counts      : regular=1557, enable_latch=0, load_capacitance=0, antenna=0, node_sink=0, port=0, total=1557
+    misc counts      : r=1, pp=0, mci=0
+    cell areas       : b=1542.730um^2, i=0.000um^2, icg=0.000um^2, dcg=0.000um^2, l=0.000um^2, total=1542.730um^2
+    cell capacitance : b=0.460pF, i=0.000pF, icg=0.000pF, dcg=0.000pF, l=0.000pF, total=0.460pF
+    sink capacitance : total=2.676pF, avg=0.002pF, sd=0.000pF, min=0.002pF, max=0.002pF
+    wire capacitance : top=0.000pF, trunk=0.601pF, leaf=1.519pF, total=2.121pF
+    wire lengths     : top=0.000um, trunk=3591.690um, leaf=8467.060um, total=12058.750um
+    hp wire lengths  : top=0.000um, trunk=3011.710um, leaf=5360.380um, total=8372.090um
+  Clock DAG net violations PRO final: none
+  Clock DAG primary half-corner transition distribution PRO final:
+    Trunk : target=0.425ns count=21 avg=0.142ns sd=0.039ns min=0.005ns max=0.195ns {21 <= 0.255ns, 0 <= 0.340ns, 0 <= 0.383ns, 0 <= 0.404ns, 0 <= 0.425ns}
+    Leaf  : target=0.425ns count=156 avg=0.149ns sd=0.014ns min=0.099ns max=0.192ns {156 <= 0.255ns, 0 <= 0.340ns, 0 <= 0.383ns, 0 <= 0.404ns, 0 <= 0.425ns}
+  Clock DAG library cell distribution PRO final {count}:
+     Bufs: sky130_fd_sc_hd__clkbuf_16: 3 sky130_fd_sc_hd__clkbuf_8: 27 sky130_fd_sc_hd__clkbuf_4: 146 
+  Primary reporting skew groups PRO final:
+  Skew group summary PRO final:
+    skew_group clk/cm_func: insertion delay [min=0.862, max=0.963, avg=0.916, sd=0.022, skn=-0.401, kur=-0.584], skew [0.101 vs 0.352], 100% {0.862, 0.963} (wid=0.010 ws=0.007) (gid=0.960 gs=0.104)

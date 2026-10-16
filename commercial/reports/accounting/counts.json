@@ -1,0 +1,16 @@
+{
+ "window_utc": [
+  "2026-10-01T04:00:00",
+  "2026-10-07T20:15:04"
+ ],
+ "model_calls": 2907,
+ "tokens": {
+  "input_tokens": 6524,
+  "output_tokens": 1261596,
+  "cache_creation_input_tokens": 31934690,
+  "cache_read_input_tokens": 891055522
+ },
+ "designer_messages": 86,
+ "designer_active_hours_20min_rule": 3.14,
+ "designer_days": 7
+}

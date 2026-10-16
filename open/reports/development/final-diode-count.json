@@ -1,0 +1,8 @@
+{
+ "file_counted": "layout/picorv32.def",
+ "file_sha256": "798cce56e1eca539a0efe118641443956479f60c9cf7974c50205ed31fd007b5",
+ "method": "count the COMPONENTS entries whose cell type is sky130_fd_sc_hd__diode_2 (equivalent: grep -c ' sky130_fd_sc_hd__diode_2 ' layout/picorv32.def)",
+ "components_total": 45691,
+ "diode_2_instances": 494,
+ "not_established": "This count is the final state only. It does not establish a 492 to 494 ECO history."
+}

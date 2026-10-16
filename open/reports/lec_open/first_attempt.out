@@ -1,0 +1,48 @@
+2026-10-08T14:59:53
+0836050971b3c6cdd28ac3b1e5719a67fb645161912bef1e472e63995ceb0622  <DEPOT>
+16f15316c663f8cb22d23821767a845e9db0f1cc5d8dc1f382c7b38fe66320ef  <WORK>/openroad-adapter-exp/e6_synth_abc_buffering/runs/RUN_2026-10-08_13-10-33/06-yosys-synthesis/picorv32.nl.v
+WARNING: passwd file doesn't exist in container, not updating
+WARNING: group file doesn't exist in container, not updating
+OPEN_LEC equivalent=False compared=1864 proven=586 unproven=1278 flops_golden=1591 flops_revised=1555 groups=1553 merged=4 traced=4 unpaired_golden=35 unpaired_revised=1 dont_care_points=1276 unproven_on_unpaired=137 control_positive_points=1862 control_negative_unproven=1 swapped='line 31976: sky130_fd_sc_hd__nand2_2 -> sky130_fd_sc_hd__nor2_2'
+unproven_point D of alu_out_q[0]
+unproven_point D of alu_out_q[10]
+unproven_point D of alu_out_q[11]
+unproven_point D of alu_out_q[12]
+unproven_point D of alu_out_q[13]
+unproven_point D of alu_out_q[14]
+unproven_point D of alu_out_q[15]
+unproven_point D of alu_out_q[16]
+unproven_point D of alu_out_q[17]
+unproven_point D of alu_out_q[18]
+unproven_point D of alu_out_q[19]
+unproven_point D of alu_out_q[1]
+unproven_point D of alu_out_q[20]
+unproven_point D of alu_out_q[21]
+unproven_point D of alu_out_q[22]
+unproven_point D of alu_out_q[23]
+unproven_point D of alu_out_q[24]
+unproven_point D of alu_out_q[25]
+unproven_point D of alu_out_q[26]
+unproven_point D of alu_out_q[27]
+unproven_point D of alu_out_q[28]
+unproven_point D of alu_out_q[29]
+unproven_point D of alu_out_q[2]
+unproven_point D of alu_out_q[30]
+unproven_point D of alu_out_q[31]
+unproven_point D of alu_out_q[3]
+unproven_point D of alu_out_q[4]
+unproven_point D of alu_out_q[5]
+unproven_point D of alu_out_q[6]
+unproven_point D of alu_out_q[7]
+unproven_point D of alu_out_q[8]
+unproven_point D of alu_out_q[9]
+unproven_point D of count_instr[0]
+unproven_point D of count_instr[10]
+unproven_point D of count_instr[11]
+unproven_point D of count_instr[12]
+unproven_point D of count_instr[13]
+unproven_point D of count_instr[14]
+unproven_point D of count_instr[15]
+unproven_point D of count_instr[16]
+exit=3
+seconds=52

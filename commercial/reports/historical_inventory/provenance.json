@@ -1,0 +1,30 @@
+{
+ "purpose": "provenance of the released historical evidence files in this directory; created for release v2.0.2",
+ "common_note": "scrubbed copy: host/user/licence-server/path tokens replaced. Original sha256/size are of the unscrubbed historical files; they do not verify the published bytes (see published_sha256).",
+ "files": [
+  {
+   "published_name": "README.md",
+   "generated_from": "reconstruction.tsv",
+   "published_size_bytes": 1596,
+   "published_sha256": "5c0c3b15687d40ff234f369c1fcc0bbbd3138cf5d512e94b6248d0d901802478",
+   "source_lines": "all",
+   "transformations": []
+  },
+  {
+   "published_name": "reconstruction.tsv",
+   "generated_from": "line counts of the eight SHA256SUMS.original files in this directory tree",
+   "published_size_bytes": 645,
+   "published_sha256": "5abf846c2c307fc5a13264a60ff5c8564d98d24222022dab43ad6e28ff17bb6c",
+   "source_lines": "all",
+   "transformations": []
+  },
+  {
+   "published_name": "verification-2026-10-16.md",
+   "generated_from": "the inventory's recorded check (evidence inventory notes, finding 17)",
+   "published_size_bytes": 622,
+   "published_sha256": "ea1815fa63732732191b94cbb3ae0635f7cd95846d121ee8123c9b2a44710636",
+   "source_lines": "all",
+   "transformations": []
+  }
+ ]
+}

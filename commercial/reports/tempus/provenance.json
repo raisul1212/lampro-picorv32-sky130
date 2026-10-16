@@ -1,0 +1,29 @@
+{
+ "purpose": "provenance of the released historical evidence files in this directory; created for release v2.0.2",
+ "common_note": "scrubbed copy: host/user/licence-server/path tokens replaced. Original sha256/size are of the unscrubbed historical files; they do not verify the published bytes (see published_sha256).",
+ "files": [
+  {
+   "published_name": "ledger-excerpt.md",
+   "generated_from": "rows D-214..D-219 of the commercial ledger (local copy in the evidence inventory); the ledger file was not published whole",
+   "published_size_bytes": 4267,
+   "published_sha256": "800211548a654fa268a028d19dee91c3a21f549fb3cb4bc8882936975315858f",
+   "source_lines": "table rows D-214..D-219 (ledger rows are not line-numbered in this record)",
+   "transformations": [
+    "row selection; columns role, filer, model, timestamp dropped",
+    "cluster paths replaced by <DEPOT>"
+   ],
+   "note": "excerpt of a registrar ledger; technical fields only",
+   "source_relative_name": "picorv32_cadence_sky130/LEDGER.md",
+   "original_size_bytes": 162148,
+   "original_sha256": "e845b90396e0871740180abc5fe5e09c1ba33561d7c36620fd2fc59467ce7c27"
+  },
+  {
+   "published_name": "summary.tsv",
+   "generated_from": "the six Tempus reports in this directory tree (path and unique-endpoint counts parsed from 'Path N:' and 'Endpoint:' lines; slack in ns)",
+   "published_size_bytes": 280,
+   "published_sha256": "aed1a865217b2713c44d6d40a98fe31170ddd393fd1ff0dbc4929c45d21f9667",
+   "source_lines": "all",
+   "transformations": []
+  }
+ ]
+}

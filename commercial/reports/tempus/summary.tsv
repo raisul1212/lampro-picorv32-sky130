@@ -1,0 +1,7 @@
+corner	check	report	paths_reported	unique_endpoints	worst_slack_ns
+ss	setup	ss/setup.rpt	1	1	0.180
+ss	hold	ss/hold.rpt.gz	1626	1626	0.716
+tt	setup	tt/setup.rpt	1	1	2.388
+tt	hold	tt/hold.rpt.gz	1626	1626	0.214
+ff	setup	ff/setup.rpt	1	1	2.957
+ff	hold	ff/hold.rpt.gz	1626	1626	0.034

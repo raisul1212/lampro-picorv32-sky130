@@ -1,0 +1,61 @@
+IMAGE-SHA 90b6a94b4d407cc97516332bd031f4ac493640c62d9204790e5427c1dc1202e5 <WORK>/openroad-fix/session-20261008-1838/image-018/librelane_3.0.14-openroad-fix-s3-018.sif
+CASE eco_all_pins
+[INFO PSM-0040] All shapes on net VPWR are connected.
+[INFO PSM-0015] Reading location of sources from: <SCRATCH>/open-ir-v2/u45eco2/P4.loc.
+Net              : VPWR
+Total power      : 2.20e-02 W
+Average IR drop  : 2.80e-03 V
+Worstcase IR drop: 5.55e-03 V
+[INFO PSM-0040] All shapes on net VGND are connected.
+[INFO PSM-0015] Reading location of sources from: <SCRATCH>/open-ir-v2/u45eco2/G4.loc.
+Net              : VGND
+Total power      : 2.20e-02 W
+Average IR drop  : 2.71e-03 V
+Worstcase IR drop: 5.57e-03 V
+CASE eco_single
+[INFO PSM-0040] All shapes on net VPWR are connected.
+[INFO PSM-0015] Reading location of sources from: <SCRATCH>/open-ir-v2/u45eco2/P1.loc.
+Net              : VPWR
+Total power      : 2.20e-02 W
+Average IR drop  : 2.13e-02 V
+Worstcase IR drop: 3.22e-02 V
+[INFO PSM-0040] All shapes on net VGND are connected.
+[INFO PSM-0015] Reading location of sources from: <SCRATCH>/open-ir-v2/u45eco2/G1.loc.
+Net              : VGND
+Total power      : 2.20e-02 W
+Average IR drop  : 2.09e-02 V
+Worstcase IR drop: 3.15e-02 V
+CASE eco_Rx3
+[INFO PSM-0040] All shapes on net VPWR are connected.
+[INFO PSM-0015] Reading location of sources from: <SCRATCH>/open-ir-v2/u45eco2/P4.loc.
+Net              : VPWR
+Total power      : 2.20e-02 W
+Average IR drop  : 8.40e-03 V
+Worstcase IR drop: 1.67e-02 V
+[INFO PSM-0040] All shapes on net VGND are connected.
+[INFO PSM-0015] Reading location of sources from: <SCRATCH>/open-ir-v2/u45eco2/G4.loc.
+Net              : VGND
+Total power      : 2.20e-02 W
+Average IR drop  : 8.14e-03 V
+Worstcase IR drop: 1.67e-02 V
+CASE eco_Rx25
+[INFO PSM-0040] All shapes on net VPWR are connected.
+[INFO PSM-0015] Reading location of sources from: <SCRATCH>/open-ir-v2/u45eco2/P4.loc.
+Net              : VPWR
+Total power      : 2.20e-02 W
+Average IR drop  : 7.00e-02 V
+Worstcase IR drop: 1.39e-01 V
+[INFO PSM-0040] All shapes on net VGND are connected.
+[INFO PSM-0015] Reading location of sources from: <SCRATCH>/open-ir-v2/u45eco2/G4.loc.
+Net              : VGND
+Total power      : 2.20e-02 W
+Average IR drop  : 6.78e-02 V
+Worstcase IR drop: 1.39e-01 V
+eco_Rx25 VPWR worst_mV=138.8580 avg_mV=71.235 rows 45691
+eco_Rx25 VGND worst_mV=139.3330 avg_mV=68.796 rows 45691
+eco_Rx3 VPWR worst_mV=16.6630 avg_mV=8.548 rows 45691
+eco_Rx3 VGND worst_mV=16.7200 avg_mV=8.256 rows 45691
+eco_all_pins VPWR worst_mV=5.5540 avg_mV=2.849 rows 45691
+eco_all_pins VGND worst_mV=5.5730 avg_mV=2.752 rows 45691
+eco_single VPWR worst_mV=32.1730 avg_mV=21.271 rows 45691
+eco_single VGND worst_mV=31.5160 avg_mV=20.892 rows 45691

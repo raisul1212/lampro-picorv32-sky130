@@ -1,0 +1,27 @@
+{
+ "purpose": "provenance of the released historical evidence files in this directory; created for release v2.0.2",
+ "common_note": "scrubbed copy: host/user/licence-server/path tokens replaced. Original sha256/size are of the unscrubbed historical files; they do not verify the published bytes (see published_sha256).",
+ "files": [
+  {
+   "published_name": "README.md",
+   "generated_from": "job_43903861.out and the Tempus setup report",
+   "published_size_bytes": 1628,
+   "published_sha256": "3595d2d6c4eb762ad1cee4a1ca9a9172bf7914bfea4202888930d0268aa50289",
+   "source_lines": "all",
+   "transformations": []
+  },
+  {
+   "published_name": "job_43903861.out",
+   "source_relative_name": "picorv32_cadence_sky130/frozen/rcmax_crosscheck_43903861/job_43903861.out",
+   "original_size_bytes": 650,
+   "original_sha256": "5723268ad80e189484587a4437718322af554563d2e05328582a9c1a89410a38",
+   "producer": "OpenROAD RCX + OpenSTA",
+   "run_id": "43903861",
+   "published_size_bytes": 650,
+   "published_sha256": "3a94f3da9bded7aa349eca38a4362dfdc87a8f714a5ebe7e40b8eb997214750e",
+   "source_lines": "all",
+   "transformations": [],
+   "note": "scrubbed copy: host/user/licence-server/path tokens replaced"
+  }
+ ]
+}

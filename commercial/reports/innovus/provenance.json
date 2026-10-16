@@ -1,0 +1,30 @@
+{
+ "purpose": "provenance of the released historical evidence files in this directory; created for release v2.0.2",
+ "common_note": "scrubbed copy: host/user/licence-server/path tokens replaced. Original sha256/size are of the unscrubbed historical files; they do not verify the published bytes (see published_sha256).",
+ "files": [
+  {
+   "published_name": "README.md",
+   "generated_from": "cts-excerpt.log",
+   "published_size_bytes": 798,
+   "published_sha256": "fa306b0be8447f3f5951c3b4303bfce710dc432935d583d8244acd13ad483a96",
+   "source_lines": "all",
+   "transformations": []
+  },
+  {
+   "published_name": "cts-excerpt.log",
+   "source_relative_name": "picorv32_cadence_sky130/work/runs/43902639.-5-1836051/pnr_picorv32_ss/innovus.log",
+   "original_size_bytes": 610379,
+   "original_sha256": "75148a169af57acf7d6b1947bf8a43d0b479d8723b1ed248d3af0c9e1661bb8b",
+   "producer": "Innovus v25.11-s102_1",
+   "run_id": "43902639",
+   "published_size_bytes": 7605,
+   "published_sha256": "8e06981e190c8b619f04d885b5a1780217b5fe9cbd85728aa31209758c210f46",
+   "source_lines": "1-5 (tool identity and date; the host and licence lines 6-12 omitted) and 6426-6515 (clock-tree statistics, 'PRO initial state' to the end of 'PRO final')",
+   "transformations": [
+    "excerpt",
+    "host/user/licence-server/path tokens replaced"
+   ],
+   "note": "scrubbed copy: host/user/licence-server/path tokens replaced"
+  }
+ ]
+}

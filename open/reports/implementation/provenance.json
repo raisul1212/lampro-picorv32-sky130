@@ -1,0 +1,29 @@
+{
+ "purpose": "provenance of the released historical evidence files in this directory; created for release v2.0.2",
+ "common_note": "scrubbed copy: host/user/licence-server/path tokens replaced. Original sha256/size are of the unscrubbed historical files; they do not verify the published bytes (see published_sha256).",
+ "files": [
+  {
+   "published_name": "config-README.md",
+   "generated_from": "config.json",
+   "published_size_bytes": 893,
+   "published_sha256": "0ffa0a9d71d6247b8e96e43528224ec00112bc8e37671ee24919d5346137cc97",
+   "source_lines": "all",
+   "transformations": []
+  },
+  {
+   "published_name": "config.json",
+   "source_relative_name": "picorv32_open_sky130/frozen/a019_v2_u45_eco2_44019112/config.json",
+   "original_size_bytes": 2101,
+   "original_sha256": "fdcf5729f9806b00c90dd8d381f48059693a0e8866c1af7ac98a6a1435adc98c",
+   "producer": "LibreLane configuration (3.0.14)",
+   "run_id": "44019112",
+   "published_size_bytes": 2050,
+   "published_sha256": "afc9eba1a224e019ab607921f4877e51cacbb3edfc79ebc2661bb7508b7549bb",
+   "source_lines": "all",
+   "transformations": [
+    "private input paths replaced by documented placeholders (<WORK>/.../picorv32.v, <WORK>/.../picorv32_v101.sdc)"
+   ],
+   "note": "scrubbed copy: host/user/licence-server/path tokens replaced"
+  }
+ ]
+}

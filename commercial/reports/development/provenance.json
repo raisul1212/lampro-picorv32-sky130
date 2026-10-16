@@ -1,0 +1,42 @@
+{
+ "purpose": "provenance of the released historical evidence files in this directory; created for release v2.0.2",
+ "common_note": "scrubbed copy: host/user/licence-server/path tokens replaced. Original sha256/size are of the unscrubbed historical files; they do not verify the published bytes (see published_sha256).",
+ "files": [
+  {
+   "published_name": "README.md",
+   "generated_from": "the log and the ledger row",
+   "published_size_bytes": 773,
+   "published_sha256": "511c1e8574ec79c4b22755b836dfcddeaea7d3426a77c1ac820efaa2d72b7e89",
+   "source_lines": "all",
+   "transformations": []
+  },
+  {
+   "published_name": "antenna-ledger-excerpt.md",
+   "generated_from": "row D-191 of the commercial ledger",
+   "published_size_bytes": 1107,
+   "published_sha256": "5964fdd6c7f8a6ca344973667602abac493c0c6b4a8e30045187f9d4dfbf70d1",
+   "source_lines": "table row D-191",
+   "transformations": [
+    "row selection; columns role, filer, model, timestamp dropped",
+    "cluster paths replaced by <DEPOT>"
+   ],
+   "note": "excerpt of a registrar ledger; technical fields only",
+   "source_relative_name": "picorv32_cadence_sky130/LEDGER.md",
+   "original_size_bytes": 162148,
+   "original_sha256": "e845b90396e0871740180abc5fe5e09c1ba33561d7c36620fd2fc59467ce7c27"
+  },
+  {
+   "published_name": "antenna_43898126.log",
+   "source_relative_name": "picorv32_cadence_sky130/work/runs/43898126.-5-2499993/open_antenna/magic.log",
+   "original_size_bytes": 36276,
+   "original_sha256": "628a25faa14ea1edec2812eb7438a1460c0e30afb727be30493376c699a95b29",
+   "producer": "Magic 8.3 revision 678 (antennacheck)",
+   "run_id": "43898126",
+   "published_size_bytes": 36264,
+   "published_sha256": "3ef02281fbcd8e9c72938231567ab97e54c56723fd4e47244ad98a81cc28d670",
+   "source_lines": "all",
+   "transformations": [],
+   "note": "scrubbed copy: host/user/licence-server/path tokens replaced"
+  }
+ ]
+}

@@ -1,0 +1,6 @@
+Conformal LEC 24.10 evidence for the v2.0 open build a019_abc_hf_sdc101_43934060 (2026-10-09).
+rtl2synth: original RTL (sha256 0836050971b3...) against the shipped Yosys netlist, with flip-flop instances renamed after their RTL registers (rename_dff.py asserts that cell types and pin-to-net connections are identical), the FSM encoding files from Yosys fsm_recode (cpu_state 8-bit one-hot to 7-bit one-hot; mem_wordsize 2-bit binary to 3-bit one-hot), and analyze_setup (77 golden DFFs merged, 5 converted to constants, 10/10 merged).
+  DIR_fsm_setup: 1959 compare points, 0 non-equivalent, 0 aborted, 0 unknown.
+  DIR_nofsm_setup (control without the encoding files): 1246 non-equivalent.
+stage1: original RTL against a netlist synthesised from an RTL copy with fsm_encoding=none on the two state registers (proof aid only): S1_setup 1958 points, 0 non-equivalent; S1_plain (no analyze_setup) 1202 non-equivalent.
+synth2routed: shipped Yosys netlist against the routed netlist: 1904 points, 0 non-equivalent.

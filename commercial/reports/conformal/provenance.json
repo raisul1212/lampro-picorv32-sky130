@@ -1,0 +1,40 @@
+{
+ "purpose": "provenance of the released historical evidence files in this directory; created for release v2.0.2",
+ "common_note": "scrubbed copy: host/user/licence-server/path tokens replaced. Original sha256/size are of the unscrubbed historical files; they do not verify the published bytes (see published_sha256).",
+ "files": [
+  {
+   "published_name": "README.md",
+   "generated_from": "the two logs",
+   "published_size_bytes": 788,
+   "published_sha256": "ab6f0aabaee40746232ad39a3462a52d1f941f8aa05ec455b59c3f99787af39d",
+   "source_lines": "all",
+   "transformations": []
+  },
+  {
+   "published_name": "rtl_to_synth.log",
+   "source_relative_name": "picorv32_cadence_sky130/work/runs/43902641.-5-1871961/lec-rtl.log",
+   "original_size_bytes": 47647,
+   "original_sha256": "7d552899d6a68ce7d8fc4aa0386f98e5059ac0f79075407f47ab5062bd10836e",
+   "producer": "Conformal 24.10-p100",
+   "run_id": "43902641",
+   "published_size_bytes": 47278,
+   "published_sha256": "6e8e13aef297e0ad81ff4d1bd3e47cb782d8e6dd68cd2f1c8bb01fa4b9f5ab69",
+   "source_lines": "all",
+   "transformations": [],
+   "note": "scrubbed copy: host/user/licence-server/path tokens replaced"
+  },
+  {
+   "published_name": "synth_to_routed.log",
+   "source_relative_name": "picorv32_cadence_sky130/work/runs/43902641.-5-1871961/lec/lec_routed.log",
+   "original_size_bytes": 8902,
+   "original_sha256": "27571bbe0e48824c1f1896e95d01bc8c72083e96a0866fa60b7f8e5c674d9d0c",
+   "producer": "Conformal 24.10-p100",
+   "run_id": "43902641",
+   "published_size_bytes": 8651,
+   "published_sha256": "1ab0745457bdd6fdde4c4f4047281f5fdabb97bea73055eafc2db9dd4faba200",
+   "source_lines": "all",
+   "transformations": [],
+   "note": "scrubbed copy: host/user/licence-server/path tokens replaced"
+  }
+ ]
+}
