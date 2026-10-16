@@ -1,0 +1,47 @@
+diff --git a/src/v_sdf.c b/src/v_sdf.c
+index 04d162c..3072e2d 100644
+--- a/src/v_sdf.c
++++ b/src/v_sdf.c
+@@ -3031,6 +3031,14 @@ static int32 rd_port_spec(FILE *f, char *pnam, int32 *i1, int32 *i2, int32 *eval
+ static int32 rd_port(FILE *f, char *portnam, int32 *i1, int32 *i2)
+ {
+  *i1 = *i2 = -1;
++ /* CHANGED 2026-10-10 (Lampro AI, local fix, not from Tachyon): an SDF     */
++ /* keyword is a keyword only after "(", but the lexer classifies every     */
++ /* plain identifier, so a port whose name spells one (the full adder       */
++ /* output SUM) was refused here and the rest of the SDF file abandoned.    */
++ /* Where a port is expected, read a keyword-spelled identifier as a name.  */
++ if (__toktyp != ID && get_sdfkeywrd(__token) == __toktyp
++  && (isalpha((int) __token[0]) || __token[0] == 0x5f))
++  __toktyp = ID;
+  if (__toktyp != ID)
+   {
+    __pv_ferr(1343, "SDF port reference expected - %s read", prt_sdftok());
+@@ -4050,7 +4058,13 @@ static int32 rd_port_tchk(FILE *f, struct tcterm_t *tctp)
+    tctp->tnam = __pv_stralloc(pnam); 
+    tctp->ti1 = i1;
+    tctp->ti2 = i2;
+-   tctp->eval = eval;
++   /* CHANGED 2026-10-10 (Lampro AI, local fix, not from Tachyon): the edge  */
++   /* of a timing-check port_edge was read into tctp->eval above and then   */
++   /* overwritten with the NOEDGE rd_port_spec returns for the bare port,   */
++   /* so (SETUP (posedge D) ..) also matched the negedge-D check and the    */
++   /* last SDF entry for a port won. Keep the edge read above unless the    */
++   /* port spec itself carried one.                                         */
++   if (eval != NOEDGE) tctp->eval = eval;
+    if (__toktyp != RPAR)
+     {
+      __pv_ferr(1363, "port_edge ending ) expected - %s read", prt_sdftok());
+@@ -7313,7 +7327,11 @@ got_num:
+       __pv_ferr(1314, "SDF real number %s illegal", __token);
+       d1 = 1.0;
+      }
+-    __itok_realval = d1;
++    /* CHANGED 2026-10-10 (Lampro AI, local fix, not from Tachyon): a       */
++    /* leading - was consumed above and never copied into the token, and    */
++    /* the sign was applied only to integers, so every negative real in an  */
++    /* SDF file (e.g. a -0.097 hold limit) was read as positive.            */
++    __itok_realval = signv ? -d1 : d1;
+     return(REALNUM);
+    }
+  /* integer number */
