@@ -5,7 +5,9 @@
 set -u
 . "$(dirname "${BASH_SOURCE[0]}")/env.sh"
 GDS="${GDS:-$PKG/layout/picorv32.gds}"
-W="$REPORTS/antenna_magic.work"; mkdir -p "$W"; cd "$W" || exit 2
+invalidate antenna_magic || { echo "antenna_magic: could not clear the earlier result" >&2; exit 2; }
+rm -f "$REPORTS/antenna_magic.log" || { result antenna_magic FAIL "could not clear the earlier log"; exit 2; }
+W="$(mktemp -d "$REPORTS/antenna_magic.work.XXXXXX")" || { result antenna_magic FAIL "no work directory"; exit 2; }; cd "$W" || exit 2
 cat > antenna.tcl <<TCL
 crashbackups stop
 drc off
@@ -34,7 +36,9 @@ puts "ANTENNA_END"
 quit -noprompt
 TCL
 magic -dnull -noconsole -rcfile "$PDKPATH/libs.tech/magic/sky130A.magicrc" antenna.tcl > "$REPORTS/antenna_magic.log" 2>&1
+mrc=$?
 clean_paths "$REPORTS/antenna_magic.log"
+if [ $mrc != 0 ]; then result antenna_magic FAIL "magic exited with status $mrc (see reports/antenna_magic.log)"; exit 2; fi
 if ! grep -aq ANTENNA_END "$REPORTS/antenna_magic.log"; then result antenna_magic FAIL "check did not complete (see reports/antenna_magic.log)"; exit 2; fi
 E=$(grep -a '^TOP_EXISTS_AFTER_READ:' "$REPORTS/antenna_magic.log" | tail -1 | cut -d' ' -f2)
 K=$(grep -a '^TOP_CHILDREN:' "$REPORTS/antenna_magic.log" | tail -1 | cut -d' ' -f2)

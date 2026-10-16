@@ -2,7 +2,7 @@
 <report-database>
  <description>SKY130 DRC runset</description>
  <original-file/>
- <generator>drc: script='<PDK_ROOT>/sky130A/libs.tech/klayout/drc/sky130A_mr.drc'</generator>
+ <generator>drc: script='&lt;PDK_ROOT&gt;/sky130A/libs.tech/klayout/drc/sky130A_mr.drc'</generator>
  <top-cell>picorv32</top-cell>
  <tags>
  </tags>
