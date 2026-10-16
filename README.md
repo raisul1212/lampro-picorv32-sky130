@@ -168,8 +168,8 @@ The two folders have the same structure.
 | `<flow>/sim/tb_picorv32_golden.v` | Testbench: hand-assembled RV32I program summing 1..10, stores 55 to `0x10000000` |
 | `<flow>/verify/` | One script per check; `run_all.sh` runs all of them. `sim_tchk.sh`, `cvc.sh` and their helpers run the CVC timing-check simulation; `area_split.py` computes the cell areas |
 | `<flow>/reports/` | Output of `verify/run_all.sh` on that folder (the v2.0.1 run; see Corrections), plus `reports/cvc/` (CVC runs of 2026-10-16), `reports/area/` (area calculation of 2026-10-16) and `reports/environment/` (library comparison of 2026-10-16) |
-| `<flow>/SHA256SUMS` | Checksums of every file in the folder except `reports/` and itself |
-| `<flow>/reports/EVIDENCE_SHA256SUMS` | Checksums of the released evidence files in `reports/` (all files except mutable work directories, itself and the log files `run_all.sh` rewrites) |
+| `<flow>/SHA256SUMS` | Checksums of the 33 files in the folder outside `reports/` (the v2.0.1 manifest listed 25; the new files are the CVC and area scripts and the SDC comment edit changed one hash) |
+| `<flow>/reports/EVIDENCE_SHA256SUMS` | Checksums of every released evidence file under `reports/` (all files except work directories and itself); a new `run_all.sh` run rewrites the top-level logs and results, which are then no longer the released ones |
 | `tests/test_verify_failures.py` | Offline tests of the failure handling of both `verify/` directories; no PDK or EDA tools needed |
 | `docs/TRACE-V_PicoRV32_SKY130_deck.pdf`, `docs/TRACE-V_PicoRV32_SKY130_whitepaper.pdf` | Presentation and whitepaper |
 | `docs/src/` | Sources of the deck (HTML) and whitepaper (LaTeX), the figures, and the figure extractor; `docs/v2.0.2-errata.md` lists every change made to the two documents in v2.0.2 |
